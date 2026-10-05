@@ -787,3 +787,18 @@ fieldset.locked { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }
 .sp-ver { pointer-events: none; letter-spacing: .02em; opacity: .85; }
 .ifield.invalid .inp { border-color: var(--red) !important; background: color-mix(in srgb, var(--red) 6%, var(--field)); }
 .ifield.invalid .if-ic { color: var(--red); }
+/* picker as a second page of the sheet: slides over the form, back button returns */
+.sheet { overflow: hidden; }
+.sheet.picking { min-height: 72%; }
+.dd-panel.pk-page { position: absolute; inset: 0; z-index: 6; margin: 0; padding: 14px 16px 18px; border: 0 !important; box-shadow: none !important; border-radius: inherit; background: var(--surface); display: flex; flex-direction: column; transform: translateX(-100%); transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+[dir="ltr"] .dd-panel.pk-page { transform: translateX(100%); }
+.dd-panel.pk-page.in, [dir="ltr"] .dd-panel.pk-page.in { transform: none; }
+.pk-page .pk-h { display: flex; align-items: center; gap: 10px; margin: 4px 0 12px; }
+.pk-page .pk-h h3 { font-size: 17px; font-weight: 700; }
+.pk-page .dd-x { display: none; }
+.pk-page .dd-search input { padding-inline-end: 14px; }
+.pk-page .dd-list { max-height: none; flex: 1; min-height: 0; }
+/* categories page tabs */
+.cat-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.cat-tabs button { flex: 1; height: 38px; border-radius: 12px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); transition: background .2s, color .2s; }
+.cat-tabs button.on { background: var(--t-o); color: var(--accent); }

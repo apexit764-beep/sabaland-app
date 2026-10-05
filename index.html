@@ -797,6 +797,21 @@ fieldset.locked { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }
 .sp-ver { pointer-events: none; letter-spacing: .02em; opacity: .85; }
 .ifield.invalid .inp { border-color: var(--red) !important; background: color-mix(in srgb, var(--red) 6%, var(--field)); }
 .ifield.invalid .if-ic { color: var(--red); }
+/* picker as a second page of the sheet: slides over the form, back button returns */
+.sheet { overflow: hidden; }
+.sheet.picking { min-height: 72%; }
+.dd-panel.pk-page { position: absolute; inset: 0; z-index: 6; margin: 0; padding: 14px 16px 18px; border: 0 !important; box-shadow: none !important; border-radius: inherit; background: var(--surface); display: flex; flex-direction: column; transform: translateX(-100%); transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+[dir="ltr"] .dd-panel.pk-page { transform: translateX(100%); }
+.dd-panel.pk-page.in, [dir="ltr"] .dd-panel.pk-page.in { transform: none; }
+.pk-page .pk-h { display: flex; align-items: center; gap: 10px; margin: 4px 0 12px; }
+.pk-page .pk-h h3 { font-size: 17px; font-weight: 700; }
+.pk-page .dd-x { display: none; }
+.pk-page .dd-search input { padding-inline-end: 14px; }
+.pk-page .dd-list { max-height: none; flex: 1; min-height: 0; }
+/* categories page tabs */
+.cat-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.cat-tabs button { flex: 1; height: 38px; border-radius: 12px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); transition: background .2s, color .2s; }
+.cat-tabs button.on { background: var(--t-o); color: var(--accent); }
 
 </style>
 </head>
@@ -2044,7 +2059,7 @@ window.DATA = {
     ["vFileType", "نوع الملف غير مدعوم", "This file type isn't supported"], ["vDupPhoneMember", "هذا الرقم مستخدم لموظف آخر", "Another team member uses this number"],
     ["voiceSend", "إرسال", "Send"], ["voiceCancel", "إلغاء", "Cancel"], ["voiceNote", "رسالة صوتية", "Voice message"],
     ["ntNewMsg2", "رسالة جديدة", "New message"], ["ntNewContact", "جهة اتصال جديدة", "New contact"], ["ntCampaigns", "الحملات التسويقية", "Marketing campaigns"], ["ntReplies", "تعديلات الردود السريعة", "Quick reply changes"],
-    ["optional", "اختياري", "Optional"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
+    ["optional", "اختياري", "Optional"], ["catTabSeg", "العملاء", "Customers"], ["catTabTags", "المحادثات", "Conversations"], ["catTabRc", "الردود", "Replies"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
     ["unitSeg", "تصنيفات", "segments"], ["unitTag", "وسوم", "tags"], ["unitCat", "فئات", "categories"], ["replyCatSub", "فئات لترتيب الردود السريعة — تظهر عند إضافة رد أو اختياره", "Groups for quick replies — shown when adding or picking a reply"], ["mRoleLbl", "الدور", "Role"], ["mAddedLbl", "تاريخ الإضافة", "Date added"], ["mStaff", "موظف", "Staff"], ["ddAgentPh", "اختر موظفاً", "Choose a team member"], ["ddContactPh", "اختر جهة اتصال", "Choose a contact"], ["ddNone", "بدون — سأدخل رقماً جديداً", "None — I'll enter a new number"], ["ddEmpty", "لا توجد نتائج", "No matches"], ["fltTitle", "تصفية جهات الاتصال", "Filter contacts"], ["fltReset", "إعادة تعيين", "Reset"],
     ["fltShow", "عرض النتائج", "Show results"], ["fltTag", "التصنيف", "Tag"], ["fltLang", "اللغة", "Language"], ["fltAll", "الكل", "All"], ["fltManage", "إدارة التصنيفات", "Manage tags"], ["pCreds", "بيانات الدخول التجريبية", "Demo sign-in details"], ["pFill", "تعبئة الحقول", "Fill in the fields"], ["toastCampSending", "بدأ إرسال الحملة على دفعات", "Campaign started sending in chunks"],
     ["msgLocation", "الموقع", "Location"], ["msgPhoto", "صورة", "Photo"], ["msgEditExpired", "انتهت مدة التعديل (15 دقيقة)", "The 15-minute edit window has passed"], ["reqNote", "الحقول المعلّمة بـ * إلزامية", "Fields marked * are required"],
@@ -2331,11 +2346,11 @@ window.DATA = {
   const dist = (label, pct, color) => `<div class="dist"><div class="dt"><span>${esc(label)}</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%;background:${color}"></i></div></div>`;
 
   /* ---------- state ---------- */
-  const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
+  const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
   const TABS = ["overview", "conversations", "contacts", "more"];
   const SUBS = ["segments", "replies", "campaigns", "reports", "ai-settings", "team", "account", "profile", "help", "set-appearance", "set-notifs", "set-security", "set-lang", "set-tags", "set-cats", "reply-cats"];
   // screens whose "add" action is a floating button: sheet to open + its label
-  const FABS = { conversations: ["newConv", "newConv"], contacts: ["contactForm", "addContact"], replies: ["replyForm", "addReply"], campaigns: ["campForm", "addCamp"], team: ["memberForm", "addMember"], segments: ["segForm", "segNew"], "set-tags": ["tagForm", "addConvTag"], "reply-cats": ["catForm", "catNew"] };
+  const FABS = { conversations: ["newConv", "newConv"], contacts: ["contactForm", "addContact"], replies: ["replyForm", "addReply"], campaigns: ["campForm", "addCamp"], team: ["memberForm", "addMember"], segments: ["segForm", "segNew"], "set-tags": ["tagForm", "addConvTag"], "reply-cats": ["catForm", "catNew"], "set-cats": () => CAT_TABS.find((x) => x[0] === S.catTab)[4] };
   const SUPPORT = { wa: "+968 9000 1234", mail: "support@sabalandqa.com" }; // placeholders until the real support contacts are known
 
   /* ---------- screens ---------- */
@@ -2511,9 +2526,7 @@ window.DATA = {
 
   SCR.segments = () => `<div class="scroller">${subHdr(T("contactTagsTitle"))}
       <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("contactTagsSub")}</p>
-      <div class="clist">${DATA.tags.map((t) => { const n = DATA.contacts.filter((k) => k.tag === t.id).length; return `<button class="row surf conv-card" data-act="sheet" data-arg="segActs:${t.id}">
-        <span class="mi seg-dot" style="--c:var(--${tagVar(t.color)})">${ic("tag")}</span>
-        <span class="rb"><span class="rn">${esc(L(t))}</span><span class="rs" style="margin-top:2px">${n} ${T("segCount")}</span></span><span class="chev">${ic("chevE")}</span></button>`; }).join("")}</div>
+      ${segList()}
     </div>`;
 
   SCR.replies = () => `<div class="scroller">
@@ -2643,6 +2656,18 @@ window.DATA = {
     </div>`;
 
   // account panels: the profile opens from the card on "More"; the rest are pages under the Settings list
+  const segList = () => `<div class="clist">${DATA.tags.map((t) => { const n = DATA.contacts.filter((k) => k.tag === t.id).length; return `<button class="row surf conv-card" data-act="sheet" data-arg="segActs:${t.id}">
+        <span class="mi seg-dot" style="--c:var(--${tagVar(t.color)})">${ic("tag")}</span>
+        <span class="rb"><span class="rn">${esc(L(t))}</span><span class="rs" style="margin-top:2px">${n} ${T("segCount")}</span></span><span class="chev">${ic("chevE")}</span></button>`; }).join("")}</div>`;
+  const tagList = () => `<div class="clist">${DATA.convTags.map((t) => `<button class="row surf conv-card" data-act="sheet" data-arg="tagActs:${t.id}">
+          <span class="mi seg-dot" style="--c:var(--${tagVar(t.color)})">${ic("tag")}</span>
+          <span class="rb"><span class="r1"><span class="rn">${esc(L(t))}</span>${badge(t)}</span>
+            <span class="r2"><span class="rs">${T("thUsage")}: ${DATA.conversations.filter((c) => c.convTag === t.id).length}</span></span></span>
+          <span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`;
+  const rcList = () => `<div class="clist">${DATA.replyCats.map((c) => `<button class="row surf conv-card" data-act="sheet" data-arg="catActs:${c.id}">
+        <span class="mi c-o">${ic("reply")}</span>
+        <span class="rb"><span class="rn">${esc(L(c))}</span><span class="rs" style="margin-top:2px">${DATA.quickReplies.filter((q) => q.cat === c.id).length} ${T("catCount")}</span></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`;
+  const CAT_TABS = [["seg", "catTabSeg", "contactTagsSub", segList, ["segForm", "segNew"]], ["tags", "catTabTags", "tagsSub", tagList, ["tagForm", "addConvTag"]], ["rc", "catTabRc", "replyCatSub", rcList, ["catForm", "catNew"]]];
   const accPanels = () => {
     const th = store.get("sa-theme") || "auto";
     return {
@@ -2653,15 +2678,10 @@ window.DATA = {
       security: `<div class="card surf">${cardT("lock", T("secChangePass"))}<div class="fld"><label for="pCur">${T("curPass")}</label>${pass("pCur", "********", "••••••••")}</div><div class="fld"><label for="pNew">${T("newPass")}</label>${pass("pNew", "", "••••••••", true)}</div><div class="fld"><label for="pCon">${T("confirmPass")}</label>${pass("pCon", "", "••••••••", true)}<span class="fp-err" id="pErr" hidden></span></div><button class="btn btn-p btn-blk" data-act="updPass">${ic("check")}${T("updatePass")}</button></div>`,
       lang: `<div class="card surf"><div class="lbl" style="margin-bottom:8px">${T("langInterface")}</div><div class="seg surf"><button class="${LANG === "ar" ? "on" : ""}" data-act="setLang" data-arg="ar">العربية</button><button class="${LANG === "en" ? "on" : ""}" data-act="setLang" data-arg="en">English</button></div>
         <div class="fld" style="margin-top:14px"><label for="pReg">${T("region")}</label><select id="pReg" class="sel"><option>(GMT+4) مسقط</option><option>(GMT+3) الدوحة</option><option>(GMT+5:30) الهند</option></select></div><div class="fld" style="margin:0"><label for="pDf">${T("dateFormat")}</label><select id="pDf" class="sel"><option>DD/MM/YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select></div></div>`,
-      cats: `<p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("catsMgmtSub")}</p>
-        <div class="clist">${[["segments", "users", "c-o", "navContactTags", DATA.tags.length, "unitSeg"], ["set-tags", "tag", "c-m", "tabTags", DATA.convTags.length, "unitTag"], ["reply-cats", "reply", "c-b", "replyCatTitle", DATA.replyCats.length, "unitCat"]].map(([go, icn, cls, k, n, u]) => `<button class="row surf conv-card" data-act="go" data-arg="${go}">
-          <span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(k)}</span><span class="rs" style="margin-top:2px">${n} ${T(u)}</span></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`,
+      cats: `<div class="cat-tabs" role="tablist">${CAT_TABS.map(([id, k]) => `<button role="tab" class="${S.catTab === id ? "on" : ""}" aria-selected="${S.catTab === id}" data-act="catTab" data-arg="${id}">${T(k)}</button>`).join("")}</div>
+        ${(() => { const t = CAT_TABS.find((x) => x[0] === S.catTab); return `<p style="margin:2px 4px 14px;font-size:13px;color:var(--ink-2)">${T(t[2])}</p>${t[3]()}`; })()}`,
       tags: `<p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("tagsSub")}</p>
-        <div class="clist">${DATA.convTags.map((t) => `<button class="row surf conv-card" data-act="sheet" data-arg="tagActs:${t.id}">
-          <span class="mi seg-dot" style="--c:var(--${tagVar(t.color)})">${ic("tag")}</span>
-          <span class="rb"><span class="r1"><span class="rn">${esc(L(t))}</span>${badge(t)}</span>
-            <span class="r2"><span class="rs">${T("thUsage")}: ${DATA.conversations.filter((c) => c.convTag === t.id).length}</span></span></span>
-          <span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`,
+        ${tagList()}`,
       notifs: `<div class="card surf">${cardT("bell", T("ntAlerts"))}<p class="card-d">${T("ntAlertsSub")}</p>
           ${tgl(T("ntNewMsg2"), true)}${tgl(T("notifNewConv"), true)}${tgl(T("ntNewContact"), true)}${tgl(T("notifTransfer"), true)}${tgl(T("ntCampaigns"), true)}${tgl(T("ntReplies"), false)}</div>
         <div class="card surf">${cardT("bell", T("ntHow"))}${tgl(T("notifSound"), true)}${tgl(T("ntVibrate"), true)}</div>
@@ -2681,9 +2701,7 @@ window.DATA = {
   SCR["set-tags"] = () => `<div class="scroller">${subHdr(T("tabTags"))}${accPanels().tags}</div>`;
   SCR["reply-cats"] = () => `<div class="scroller">${subHdr(T("replyCatTitle"))}
       <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("replyCatSub")}</p>
-      <div class="clist">${DATA.replyCats.map((c) => `<button class="row surf conv-card" data-act="sheet" data-arg="catActs:${c.id}">
-        <span class="mi c-o">${ic("reply")}</span>
-        <span class="rb"><span class="rn">${esc(L(c))}</span><span class="rs" style="margin-top:2px">${DATA.quickReplies.filter((q) => q.cat === c.id).length} ${T("catCount")}</span></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div>
+      ${rcList()}
     </div>`;
   SETTINGS.forEach(([id, k]) => { SCR["set-" + id] = () => `<div class="scroller">${subHdr(T(id === "notifs" ? "ntSettings" : k))}${accPanels()[id]}</div>`; });
 
@@ -2938,7 +2956,7 @@ window.DATA = {
   function render(anim) {
     const view = $("#view");
     const keep = !anim && view.querySelector(".scroller") ? view.querySelector(".scroller").scrollTop : 0;
-    const f = FABS[S.screen];
+    const f = typeof FABS[S.screen] === "function" ? FABS[S.screen]() : FABS[S.screen];
     const fabHtml = f ? `<button class="fab" data-act="sheet" data-arg="${f[0]}" aria-label="${T(f[1])}">${ic("plus")}</button>` : "";
     view.innerHTML = S.screen === "splash" ? "" : `<div class="screen${anim ? " enter" : ""}">${SCR[S.screen]()}${fabHtml}</div>`;
     if (anim) $("#app").classList.remove("hide-chrome");
@@ -3195,10 +3213,20 @@ window.DATA = {
   });
 
   let toastT;
+  // the picker panel is moved onto the sheet as an overlay page, then back into its field when closed
   function ddOpen(dd, open) {
-    if (!dd) return; const btn = dd.querySelector(".dd-btn"), p = dd.querySelector(".dd-panel");
-    btn.hidden = open; p.hidden = !open; btn.setAttribute("aria-expanded", String(open)); dd.classList.toggle("open", open);
-    if (open) { const i = p.querySelector("input"); i.value = ""; filterDD(p, ""); setTimeout(() => i.focus(), 30); p.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+    if (!dd) return; const btn = dd.querySelector(".dd-btn"), p = dd._panel || dd.querySelector(".dd-panel"), sheet = dd.closest(".sheet");
+    dd._panel = p; p._dd = dd; btn.setAttribute("aria-expanded", String(open)); dd.classList.toggle("open", open);
+    if (open) {
+      if (!p.querySelector(".pk-h")) { const lbl = dd.closest(".fld").querySelector("label"), t = lbl ? [...lbl.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent).join("").trim() : "";
+        p.insertAdjacentHTML("afterbegin", `<div class="pk-h"><button type="button" class="ibtn sm surf" data-act="ddClose" aria-label="back">${ic("back")}</button><h3>${esc(t)}</h3></div>`); }
+      sheet.appendChild(p); p.classList.add("pk-page"); p.hidden = false; sheet.classList.add("picking");
+      void p.offsetWidth; p.classList.add("in");
+      const i = p.querySelector("input"); i.value = ""; filterDD(p, ""); setTimeout(() => i.focus({ preventScroll: true }), 320);
+    } else {
+      p.classList.remove("in"); sheet && sheet.classList.remove("picking");
+      setTimeout(() => { if (p.classList.contains("in")) return; p.hidden = true; p.classList.remove("pk-page"); if (dd.isConnected) dd.appendChild(p); }, 300);
+    }
   }
   function filterDD(panel, s) {
     let n = 0; panel.querySelectorAll(".opt[data-q]").forEach((o) => { const hit = !s || o.dataset.q.includes(s); o.hidden = !hit; if (hit) n++; });
@@ -3234,7 +3262,7 @@ window.DATA = {
       S.prev = "notifications"; go(n.go[0]);
     },
     ntReadAll: () => { NOTIFS.forEach((n) => { n.unread = false; }); render(); toast("ntAllRead"); },
-    back: () => go(S.screen === "segments" && S.prev === "contacts" ? "contacts" : ["segments", "set-tags", "reply-cats"].includes(S.screen) ? "set-cats" : S.screen === "notifications" ? S.tab : S.prev === "notifications" && S.screen !== "notifications" && !TABS.includes(S.screen) ? (S.prev = null, "notifications") : S.screen === "chat" ? "conversations" : S.screen.startsWith("set-") ? "account" : SUBS.includes(S.screen) ? "more" : S.tab),
+    back: () => go((S.screen === "segments" || S.screen === "set-cats") && S.prev === "contacts" ? "contacts" : ["segments", "set-tags", "reply-cats"].includes(S.screen) ? "set-cats" : S.screen === "notifications" ? S.tab : S.prev === "notifications" && S.screen !== "notifications" && !TABS.includes(S.screen) ? (S.prev = null, "notifications") : S.screen === "chat" ? "conversations" : S.screen.startsWith("set-") ? "account" : SUBS.includes(S.screen) ? "more" : S.tab),
     copyText: (v) => { const done = () => toast("copied"); try { navigator.clipboard.writeText(v).then(done, done); } catch (e) { done(); } },
     sendReport: () => { if (!validate("report")) return; const m = $("#hpMsg"); m.value = ""; delete m.dataset.vt; m.dispatchEvent(new Event("input", { bubbles: true })); toast("reportSent"); },
     openChat: (id) => { S.chat = id; const c = getConv(id); if (c) c.unread = 0; go("chat"); },
@@ -3289,6 +3317,7 @@ window.DATA = {
     msgEditSave: (i) => { const v = $("#meT").value.trim(); if (!v) return setErr("meT", T("vReq")); if (v.length > 5000) return setErr("meT", tpl("vMax", { n: 5000 })); const c = getConv(S.chat), m = c.msgs[+i]; m.x = m.xe = v; m.edited = true; closeSheet(true); $("#msgs").innerHTML = msgsHtml(c); toast("toastSaved"); },
     msgDelDo: (i) => { const c = getConv(S.chat); c.msgs[+i].deleted = true; closeSheet(true); $("#msgs").innerHTML = msgsHtml(c); toast("toastDeleted"); },
     sendCampDo: (id) => { const cp = DATA.campaigns.find((x) => x.id === id); cp.st = "sending"; closeSheet(true); render(); toast("toastCampSending"); },
+    catTab: (t) => { S.catTab = t; render(); },
     pickRange: (k) => { S.range = k; if (k === "repPeriodCustom") openSheet("range"); else { closeSheet(true); render(); } },
     // voice note: simulated recording (the dashboard records with MediaRecorder and uploads an .ogg)
     voice: () => {
@@ -3325,17 +3354,17 @@ window.DATA = {
       if (a === "reset") { S.fTag = S.fLang = "all"; } else { const [k, v] = a.split(":"); S[k] = v; }
       render(); if (S.sheet === "contFilter") refreshSheet();
     },
-    fltManage: () => { closeSheet(true); S.prev = "contacts"; go("segments"); },
+    fltManage: () => { closeSheet(true); S.catTab = "seg"; S.prev = "contacts"; go("set-cats"); },
     pickNum: (n) => { S.num = n; closeSheet(); render(); },
     ncPick: (id) => { S.sheetArg = id; refreshSheet(); },
     ddPick: (v, el) => {
-      const dd = el.closest(".dd"), btn = dd.querySelector(".dd-btn");
-      dd.querySelectorAll(".dd-list .opt").forEach((o) => o.classList.toggle("on", o === el));
+      const p = el.closest(".dd-panel"), dd = p._dd || el.closest(".dd"), btn = dd.querySelector(".dd-btn");
+      p.querySelectorAll(".dd-list .opt").forEach((o) => o.classList.toggle("on", o === el));
       btn.querySelector(".dd-cur").innerHTML = el.innerHTML; btn.dataset.value = v;
       ddOpen(dd, false);
     },
     ddToggle: (a, el) => ddOpen(el.closest(".dd"), true),
-    ddClose: (a, el) => ddOpen(el.closest(".dd"), false),
+    ddClose: (a, el) => { const p = el.closest(".dd-panel"); ddOpen((p && p._dd) || el.closest(".dd"), false); },
     ncStart: () => {
       const typed = $("#ncPh") && telVal("ncPh").digits;
       if (!validate("newConv", { picked: S.sheetArg && !typed })) return;
@@ -3417,7 +3446,6 @@ window.DATA = {
     jump: (s) => { if (s === "forgot") return ACT.forgot(); if (s === "splash") return playSplash(); if (s === "chat" && !S.chat) S.chat = DATA.conversations[0].id; go(s); },
   };
   document.addEventListener("click", (e) => {
-    document.querySelectorAll(".dd.open").forEach((dd) => { if (!dd.contains(e.target)) ddOpen(dd, false); });
     const a = e.target.closest("[data-act]"); if (!a) return;
     const fn = ACT[a.dataset.act]; if (!fn) return;
     if (a.tagName === "A") e.preventDefault();
@@ -3456,7 +3484,6 @@ window.DATA = {
         <use class="sp-ar" href="#lg-textAr"/>
         <use class="sp-en" href="#lg-textEn"/>
       </svg>
-      <div class="sp-tag">${T("tagline")}</div>
       <p class="sp-skip sp-ver">${T("version")} <span class="num" dir="ltr">${APP_VERSION}</span></p></div>`;
     spT.push(setTimeout(endSplash, 4300));
   }
