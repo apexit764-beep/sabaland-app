@@ -1,0 +1,6 @@
+{
+  "name": "sabaland-app",
+  "private": true,
+  "type": "commonjs",
+  "scripts": { "build": "node build.js" }
+}
