@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const here = __dirname, src = (f) => fs.readFileSync(path.join(here, "src", f), "utf8"), vendor = (f) => fs.readFileSync(path.join(here, "vendor", f), "utf8");
 
-const out = src("shell.html")
+const out = src("shell.html").split("@FAVICON@").join("data:image/png;base64," + fs.readFileSync(path.join(here, "src", "favicon.png")).toString("base64"))
   .replace("/*@CSS@*/", () => src("app.css").replace("@LOGIN_BG@", "data:image/jpeg;base64," + fs.readFileSync(path.join(here, "src", "login-bg.jpg")).toString("base64")))
   .replace("<!--@LOGO@-->", () => src("logo-symbols.svg"))
   // labels: the dashboard's own dictionary wins; the app dictionary only fills keys it lacks

@@ -902,7 +902,7 @@
   // dashboard rules: own text messages can be edited for 15 minutes and deleted for 48 hours (dashboard copy only)
   const canEdit = (m) => !m.file && !m.voice && !m.img && m.at && Date.now() - m.at < 15 * 60e3;
   SH.msgActs = (i) => { const m = getConv(S.chat).msgs[+i]; const it = []; if (canEdit(m)) it.push(["sheet", "msgEdit:" + i, "pen", "c-b", T("msgEdit")]); it.push(["sheet", "msgDel:" + i, "trash", "c-r", T("msgDelete")]);
-    return actsSheet(m.img ? T("msgPhoto") : esc(msgText(m).slice(0, 40)), it) + (canEdit(m) ? "" : `<p class="hint" style="padding:0 20px 20px;margin-top:-12px">${T("msgEditExpired")}</p>`); };
+    return actsSheet(m.img ? T("msgPhoto") : esc(msgText(m).length > 40 ? msgText(m).slice(0, 40).trim() + "…" : msgText(m)), it) + (canEdit(m) ? "" : `<p class="hint" style="padding:0 20px 20px;margin-top:-12px">${T("msgEditExpired")}</p>`); };
   SH.msgEdit = (i) => { const m = getConv(S.chat).msgs[+i]; return shHead(T("msgEditTitle")) + `<div class="sh-b"><div class="fld"><label for="meT">${T("rBody")}</label><textarea id="meT" class="ta" rows="4">${esc(msgText(m))}</textarea></div>
     <div class="off-note">${ic("info")}<span>${T("msgEditHint")}</span></div></div>` + shFoot(`<button class="btn btn-p" data-act="msgEditSave" data-arg="${i}">${T("save")}</button>`); };
   SH.msgDel = (i) => shHead(T("msgDeleteTitle"), T("msgDeleteMsg")) + shFoot(`<button class="btn btn-d" data-act="msgDelDo" data-arg="${i}">${ic("trash")}${T("delete")}</button>`);

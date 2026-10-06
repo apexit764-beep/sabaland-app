@@ -1113,3 +1113,7 @@ fieldset.locked { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }
 .composer.multi { flex-wrap: wrap; border-radius: 22px; row-gap: 2px; }
 .composer.multi textarea { order: -1; flex: 1 1 100%; padding: 8px 10px 4px; }
 .composer.multi .send { margin-inline-start: auto; }
+/* long unbroken text (e.g. a message without spaces) wraps instead of running off the sheet or bubble */
+.sh-h .sh-t { min-width: 0; }
+.sh-h h3 { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.bub { overflow-wrap: anywhere; }
