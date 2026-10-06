@@ -63,7 +63,9 @@
     ["vFileType", "نوع الملف غير مدعوم", "This file type isn't supported"], ["vDupPhoneMember", "هذا الرقم مستخدم لموظف آخر", "Another team member uses this number"],
     ["voiceSend", "إرسال", "Send"], ["voiceCancel", "إلغاء", "Cancel"], ["voiceNote", "رسالة صوتية", "Voice message"],
     ["ntNewMsg2", "رسالة جديدة", "New message"], ["ntNewContact", "جهة اتصال جديدة", "New contact"], ["ntCampaigns", "الحملات التسويقية", "Marketing campaigns"], ["ntReplies", "تعديلات الردود السريعة", "Quick reply changes"],
-    ["optional", "اختياري", "Optional"], ["fbPick", "اختر ملفاً للإرفاق", "Choose a file to attach"], ["fbTypes", "صورة، PDF، مستند، فيديو أو صوت · حتى 16 ميجا", "Image, PDF, document, video or audio · up to 16 MB"], ["fbRemove", "إزالة الملف", "Remove file"], ["repSubShort", "تحليلات المحادثات والمساعد والفريق", "Chats, AI and team insights"], ["repliesSubShort", "ردود جاهزة للفريق والمساعد الذكي", "Ready replies for your team and AI"], ["ntMasterT", "تفعيل الإشعارات", "Turn on notifications"], ["ntMasterD", "عند الإيقاف لن تصلك أي إشعارات على هذا الجهاز", "When off, this device won't get any notifications"], ["catTabSeg", "تصنيفات العملاء", "Customer segments"], ["catTabTags", "وسوم المحادثات", "Conversation tags"], ["catTabRc", "فئات الردود", "Reply categories"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
+    ["optional", "اختياري", "Optional"], ["aiAgent", "المساعد الذكي", "AI assistant"], ["grpPrefs", "التفضيلات", "Preferences"], ["tabMine", "حسابي", "My account"], ["bioOffT", "الدخول بالبصمة غير مفعّل", "Fingerprint sign-in is off"], ["bioOffD", "سجّل الدخول بكلمة المرور، وسيتم تفعيل البصمة تلقائياً لهذا الجهاز.", "Sign in with your password and fingerprint sign-in will be turned on for this device."], ["bioGotIt", "حسناً", "Got it"], ["aiReplySw", "الرد الذكي", "AI replies"], ["aiReplySwD", "عند الإيقاف يرد الموظفون فقط", "When off, only staff reply"], ["actionsLbl", "إجراءات", "Actions"], ["aiOnT", "تم تشغيل الرد الذكي", "AI replies on"], ["aiOffT", "تم إيقاف الرد الذكي", "AI replies off"], ["bioLogin", "الدخول بالبصمة", "Sign in with fingerprint"], ["bioSetting", "تفعيل البصمة", "Fingerprint sign-in"],
+    ["bioHint", "المس مستشعر البصمة للمتابعة", "Touch the fingerprint sensor to continue"], ["bioOk", "تم التحقق", "Verified"], ["bioOn", "تم تفعيل الدخول بالبصمة", "Fingerprint sign-in turned on"], ["bioOff", "تم إيقاف الدخول بالبصمة", "Fingerprint sign-in turned off"],
+    ["confirmNewPass", "تأكيد كلمة المرور الجديدة", "Confirm new password"], ["btnUpdate", "تحديث", "Update"], ["langOnly", "اللغة", "Language"], ["qaCall", "اتصال", "Call"], ["qaTransfer", "تحويل", "Transfer"], ["qaClose", "إغلاق", "Close"], ["reopenShort", "إعادة فتح", "Reopen"], ["chatClosedShort", "إعادة الفتح لمتابعة الرد", "Reopen to keep replying"], ["ntOnT", "تم تفعيل الإشعارات", "Notifications on"], ["ntOffT", "تم إيقاف الإشعارات", "Notifications off"], ["fbPick", "اختر ملفاً للإرفاق", "Choose a file to attach"], ["fbTypes", "صورة، PDF، مستند، فيديو أو صوت · حتى 16 ميجا", "Image, PDF, document, video or audio · up to 16 MB"], ["fbRemove", "إزالة الملف", "Remove file"], ["repSubShort", "تحليلات المحادثات والمساعد والفريق", "Chats, AI and team insights"], ["repliesSubShort", "ردود جاهزة للفريق والمساعد الذكي", "Ready replies for your team and AI"], ["ntMasterT", "تفعيل الإشعارات", "Turn on notifications"], ["ntMasterD", "عند الإيقاف لن تصلك أي إشعارات على هذا الجهاز", "When off, this device won't get any notifications"], ["catTabSeg", "تصنيفات العملاء", "Customer segments"], ["catTabTags", "وسوم المحادثات", "Conversation tags"], ["catTabRc", "فئات الردود", "Reply categories"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
     ["unitSeg", "تصنيفات", "segments"], ["unitTag", "وسوم", "tags"], ["unitCat", "فئات", "categories"], ["replyCatSub", "فئات لترتيب الردود السريعة — تظهر عند إضافة رد أو اختياره", "Groups for quick replies — shown when adding or picking a reply"], ["mRoleLbl", "الدور", "Role"], ["mAddedLbl", "تاريخ الإضافة", "Date added"], ["mStaff", "موظف", "Staff"], ["ddAgentPh", "اختر موظفاً", "Choose a team member"], ["ddContactPh", "اختر جهة اتصال", "Choose a contact"], ["ddNone", "بدون — سأدخل رقماً جديداً", "None — I'll enter a new number"], ["ddEmpty", "لا توجد نتائج", "No matches"], ["fltTitle", "تصفية جهات الاتصال", "Filter contacts"], ["fltReset", "إعادة تعيين", "Reset"],
     ["fltShow", "عرض النتائج", "Show results"], ["fltTag", "التصنيف", "Tag"], ["fltLang", "اللغة", "Language"], ["fltAll", "الكل", "All"], ["fltManage", "إدارة التصنيفات", "Manage tags"], ["pCreds", "بيانات الدخول التجريبية", "Demo sign-in details"], ["pFill", "تعبئة الحقول", "Fill in the fields"], ["toastCampSending", "بدأ إرسال الحملة على دفعات", "Campaign started sending in chunks"],
     ["msgLocation", "الموقع", "Location"], ["msgPhoto", "صورة", "Photo"], ["msgEditExpired", "انتهت مدة التعديل (15 دقيقة)", "The 15-minute edit window has passed"], ["reqNote", "الحقول المعلّمة بـ * إلزامية", "Fields marked * are required"],
@@ -134,6 +136,10 @@
   (function () { const c = DATA.conversations.find((x) => x.id === "c1"); if (!c) return;
     c.msgs.splice(4, 0, { t: "in", loc: { ar: "صحار — الحي التجاري، شارع 12", en: "Sohar — Commercial district, St 12" }, x: "📍", xe: "📍", tm: "10:41 ص", tme: "10:41 AM" },
       { t: "out", img: 1, x: "سدر ملكي — عبوة 1 كيلو", xe: "Royal Sidr — 1 kg jar", tm: "10:41 ص", tme: "10:41 AM", human: true }); })();
+  const ME = { ar: "هشام العبدالله", en: "Hisham Al Abdullah" };
+  DATA.conversations.forEach((c) => c.msgs.forEach((m) => { if (m.human && !m.by) m.by = c.id === "c3" ? { ar: "مريم السيابية", en: "Mariam Al Siyabi" } : /Yousef/.test(m.xe || m.x) ? { ar: "يوسف الهنائي", en: "Yousef Al Hinai" } : ME; }));
+  const agentName = (a) => ({ ar: a.n, en: a.ne });
+  DATA.conversations.forEach((c) => { if (c.assignee) return; const h = [...c.msgs].reverse().find((m) => m.human && m.by); c.assignee = h ? h.by : agentName(DATA.agents[0]); });
   const LANG5 = [["ar", "langAr"], ["en", "langEn"], ["hi", "langHi"], ["hi_rom", "langHiRom"], ["ur_rom", "langUrRom"]];
   const AI_MSG = {
     off: { ar: "شكراً لتواصلك مع سبا فريقنا غير متاح حالياً، لكن سجّلت طلبك وسنعاود التواصل أول الدوام.", en: "Thanks for contacting Saba Land Our team is offline now, but I've logged your order and we'll reply first thing.", hi: "संपर्क करने के लिए धन्यवाद। हमारी टीम अभी ऑफ़लाइन है, लेकिन आपका अनुरोध दर्ज हो गया है और हम काम शुरू होते ही जवाब देंगे।", hi_rom: "Dhanyawad for contacting us. Hamari team abhi offline hai, lekin aapki request note ho gayi hai — hum jaldi jawab denge.", ur_rom: "Shukriya for contacting us. Hamari team abhi offline hai, lekin aapki request note ho gayi hai — hum jaldi jawab denge." },
@@ -205,6 +211,8 @@
     mail: RC(2, 4, 20, 16, 2) + P("m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"),
     calendar: RC(3, 4, 18, 18, 2) + P("M16 2v4|M8 2v4|M3 10h18"),
     bolt: P("M13 2 3 14h9l-1 8 10-12h-9l1-8z"),
+    finger: P("M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4|M14 13.12c0 2.38 0 6.38-1 8.88|M17.29 21.02c.12-.6.43-2.3.5-3.02|M2 12a10 10 0 0 1 18-6|M2 16h.01|M21.8 16c.2-2 .131-5.354 0-6|M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2|M8.65 22c.21-.66.45-1.32.57-2|M9 6.8a6 6 0 0 1 9 5.2v2"),
+    monitor: RC(2, 3, 20, 14, 2) + P("M8 21h8|M12 17v4"),
     inbox: P("M22 12h-6l-2 3h-4l-2-3H2|M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"),
   };
   const FLIP = { chevE: 1, back: 1, send: 1, reply: 1 };
@@ -259,6 +267,7 @@
     jo: `${H3("#000", "#fff", "#007A3D")}<path d="M0 0l13 10L0 20z" fill="#CE1126"/><circle cx="4.6" cy="10" r="1.1" fill="#fff"/>`,
     in: `${H3("#FF9933", "#fff", "#138808")}<circle cx="15" cy="10" r="2.4" fill="none" stroke="#000080" stroke-width=".9"/>`,
     pk: `<rect width="30" height="20" fill="#01411C"/><rect width="7.5" height="20" fill="#fff"/><circle cx="19" cy="10" r="5" fill="#fff"/><circle cx="20.6" cy="8.7" r="4.4" fill="#01411C"/>`,
+    gb: `<rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6.4"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.6"/>`,
     bd: `<rect width="30" height="20" fill="#006A4E"/><circle cx="13.5" cy="10" r="6" fill="#F42A41"/>`,
   };
   const flag = (iso) => `<svg class="flag" viewBox="0 0 30 20" aria-hidden="true">${FLAGS[iso] || FLAGS.om}</svg>`;
@@ -353,8 +362,8 @@
   const dist = (label, pct, color) => `<div class="dist"><div class="dt"><span>${esc(label)}</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%;background:${color}"></i></div></div>`;
 
   /* ---------- state ---------- */
-  const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", ntOn: true, qrCat: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
-  const TABS = ["overview", "conversations", "contacts", "more"];
+  const S = { screen: "splash", tab: "conversations", bio: store.get("sa-bio") === "1", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", ntOn: true, qrCat: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
+  const TABS = ["conversations", "contacts", "overview", "more"];
   const SUBS = ["segments", "replies", "campaigns", "reports", "ai-settings", "team", "account", "profile", "set-appearance", "set-notifs", "set-security", "set-lang", "set-tags", "set-cats", "reply-cats"];
   // screens whose "add" action is a floating button: sheet to open + its label
   const FABS = { conversations: ["newConv", "newConv"], contacts: ["contactForm", "addContact"], replies: ["replyForm", "addReply"], campaigns: ["campForm", "addCamp"], team: ["memberForm", "addMember"], segments: ["segForm", "segNew"], "set-tags": ["tagForm", "addConvTag"], "reply-cats": ["catForm", "catNew"], "set-cats": () => CAT_TABS.find((x) => x[0] === S.catTab)[4] };
@@ -369,29 +378,26 @@
 
   /* ---------- notification center ---------- */
   const NOTIFS = [ // mirrors NotificationService payloads: new message / conversation / contact, transfer to you, campaigns, quick replies
-    { id: "n1", icon: "chat", cls: "c-g", day: "today", unread: true, go: ["chat", "c4"], t: { ar: "رسالة جديدة من راجيش كومار", en: "New message from Rajesh Kumar" }, s: { ar: "طلب جملة · الرقم الإضافي", en: "Wholesale order · second number" }, tm: { ar: "منذ 5 د", en: "5 min ago" } },
-    { id: "n2", icon: "transfer", cls: "c-b", day: "today", unread: true, go: ["chat", "c3"], t: { ar: "تحويل محادثة إليك: فاطمة الحارثية", en: "Conversation transferred to you: Fatma Al Harthy" }, s: { ar: "حوّلها المساعد الذكي · شكوى", en: "Transferred by the AI · complaint" }, tm: { ar: "منذ 10 د", en: "10 min ago" } },
-    { id: "n3", icon: "chat", cls: "c-o", day: "today", unread: true, go: ["chat", "c2"], t: { ar: "محادثة جديدة: بريا شارما", en: "New conversation: Priya Sharma" }, s: { ar: "الرقم الإضافي", en: "Second number" }, tm: { ar: "منذ 30 د", en: "30 min ago" } },
-    { id: "n4", icon: "users", cls: "c-ai", day: "today", unread: false, go: ["contacts"], t: { ar: "جهة اتصال جديدة: أحمد حسن", en: "New contact: Ahmed Hassan" }, s: { ar: "أُضيفت تلقائياً من واتساب", en: "Added automatically from WhatsApp" }, tm: { ar: "منذ ساعتين", en: "2 h ago" } },
-    { id: "n5", icon: "campaign", cls: "c-o", day: "yesterday", unread: false, go: ["campaigns"], t: { ar: "جاري إرسال الحملة «عرض عسل السدر — الخريف»", en: "Sending campaign “Sidr honey — autumn offer”" }, s: { ar: "كل العملاء · الرقم الرئيسي", en: "All customers · main number" }, tm: { ar: "أمس 8:30 م", en: "Yesterday 8:30 PM" } },
-    { id: "n6", icon: "bolt", cls: "c-m", day: "yesterday", unread: false, go: ["replies"], t: { ar: "تم تعديل رد سريع: أسعار العسل", en: "Quick reply updated: Honey prices" }, s: { ar: "بواسطة مريم السيابية", en: "By Mariam Al Siyabi" }, tm: { ar: "أمس 4:10 م", en: "Yesterday 4:10 PM" } },
+    { id: "n1", ago: 5, icon: "chat", cls: "c-g", day: "today", unread: true, go: ["chat", "c4"], t: { ar: "رسالة جديدة من راجيش كومار", en: "New message from Rajesh Kumar" }, s: { ar: "طلب جملة · الرقم الإضافي", en: "Wholesale order · second number" }, tm: { ar: "منذ 5 د", en: "5 min ago" } },
+    { id: "n2", ago: 10, icon: "transfer", cls: "c-b", day: "today", unread: true, go: ["chat", "c3"], t: { ar: "تحويل محادثة إليك: فاطمة الحارثية", en: "Conversation transferred to you: Fatma Al Harthy" }, s: { ar: "حوّلها المساعد الذكي · شكوى", en: "Transferred by the AI · complaint" }, tm: { ar: "منذ 10 د", en: "10 min ago" } },
+    { id: "n3", ago: 30, icon: "chat", cls: "c-o", day: "today", unread: true, go: ["chat", "c2"], t: { ar: "محادثة جديدة: بريا شارما", en: "New conversation: Priya Sharma" }, s: { ar: "الرقم الإضافي", en: "Second number" }, tm: { ar: "منذ 30 د", en: "30 min ago" } },
+    { id: "n4", ago: 125, icon: "users", cls: "c-ai", day: "today", unread: false, go: ["contacts"], t: { ar: "جهة اتصال جديدة: أحمد حسن", en: "New contact: Ahmed Hassan" }, s: { ar: "أُضيفت تلقائياً من واتساب", en: "Added automatically from WhatsApp" }, tm: { ar: "منذ ساعتين", en: "2 h ago" } },
   ];
   const ntUnread = () => NOTIFS.filter((n) => n.unread).length;
   const bellBtn = () => { const n = ntUnread(); return `<button class="ibtn surf bell${n ? " has" : ""}" data-act="go" data-arg="notifications" aria-label="${T("ntTitle")}${n ? " · " + n + " " + T("unreadN") : ""}">${ic("bell")}${n ? `<span class="bdg num">${n}</span>` : ""}</button>`; };
   SCR.notifications = () => {
     const n = ntUnread();
-    const group = (day, key) => { const items = NOTIFS.filter((x) => x.day === day); return items.length ? `<div class="sec"><div class="sec-h"><h3>${T(key)}</h3></div><div class="list surf">${items.map((x) => `<button class="row nt${x.unread ? " is-unread" : ""}" data-act="openNotif" data-arg="${x.id}"><span class="mi ${x.cls}">${ic(x.icon)}</span><span class="rb"><span class="rn">${esc(L(x.t))}</span><span class="rs">${esc(L(x.s))} · ${esc(L(x.tm))}</span></span>${x.unread ? '<i class="ndot-u" aria-label="unread"></i>' : ""}</button>`).join("")}</div></div>` : ""; };
+    const stamp = (x) => { const d = new Date(Date.now() - x.ago * 60e3), loc = LANG === "ar" ? "ar-u-nu-latn" : "en-GB"; return d.toLocaleDateString(loc, { day: "numeric", month: "long", year: "numeric" }) + " · " + d.toLocaleTimeString(loc, { hour: "numeric", minute: "2-digit" }); };
     return `<div class="scroller">${subHdr(T("ntTitle"))}
       ${n ? `<div class="nt-bar"><span>${n} ${T("unreadN")}</span><button data-act="ntReadAll">${T("ntReadAll")}</button></div>` : ""}
-      ${group("today", "ntToday")}${group("yesterday", "ntYesterday")}</div>`;
+      <div class="clist">${NOTIFS.map((x) => `<button class="row surf conv-card nt${x.unread ? " is-unread" : ""}" data-act="openNotif" data-arg="${x.id}"><span class="mi ${x.cls}">${ic(x.icon)}</span><span class="rb"><span class="rn">${esc(L(x.t))}</span><span class="nt-time">${stamp(x)}</span></span>${x.unread ? '<i class="ndot-u" aria-label="unread"></i>' : ""}</button>`).join("")}</div></div>`;
   };
 
   SCR.overview = () => {
     const s = DATA.stats, r = DATA.reports;
-    const greet = new Date().getHours() < 12 ? T("morning") : T("evening");
     const weekSum = r.weekTotal.reduce((a, b) => a + b, 0);
     return `<div class="scroller">
-      <div class="hdr greet"><div class="ttl"><p class="hi">${greet} <span class="wave" aria-hidden="true">👋</span></p><h2>${T("meName")}</h2></div>${bellBtn()}</div>
+      ${hdr(T("navReports"), T("repSubShort"), bellBtn())}
       <div class="bento2">
         ${stat("chat", "", `<span id="statConv">${s.convToday}</span>`, T("ovConvToday"), trend(s.convTrend), true)}
         ${stat("sparkle", "c-ai", s.aiHandled + "%", T("ovAIHandled"), trend(s.aiTrend))}
@@ -469,12 +475,13 @@
       const cls = m.t === "in" ? "in surf" : m.t === "ai" ? "ai" : "out";
       const idx = c.msgs.indexOf(m), mine = m.t === "out" && m.human;
       if (m.deleted) return `<div class="bub ${cls} deleted">${ic("x")}${T("msgDeleted")}</div>`;
-      const meta = `<span class="bt">${m.edited ? T("msgEdited") + " · " : ""}${esc(msgTime(m))}${m.human ? " · " + T("humanReply") : ""}${m.t !== "in" ? ic("check2") : ""}</span>`;
+      const sender = m.t === "ai" ? `<span class="bt-ai">${ic("sparkle")}${T("aiAgent")}</span>` : `<span class="bt-who">${esc(m.t === "in" ? convName(c) : m.by ? L(m.by) : L(ME))}</span>`;
+      const meta = `<span class="bt">${sender}<i>·</i>${m.edited ? T("msgEdited") + " · " : ""}${esc(msgTime(m))}${m.t !== "in" ? ic("check2") : ""}</span>`;
       const tap = mine ? ` data-act="sheet" data-arg="msgActs:${idx}" role="button" tabindex="0"` : "";
       if (m.loc) return `<div class="bub ${cls} media"><span class="map">${ic("pin")}</span><span class="cap"><strong>${T("msgLocation")}</strong><span>${esc(L(m.loc))}</span></span>${meta}</div>`;
       if (m.img) return `<div class="bub ${cls} media"${tap}><span class="photo"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="12" rx="4" fill="currentColor" opacity=".55"/><path d="M34 46h52v38a10 10 0 0 1-10 10H44a10 10 0 0 1-10-10z" fill="currentColor"/><path d="M60 58c6 8 9 12 9 16a9 9 0 0 1-18 0c0-4 3-8 9-16z" fill="#fff" opacity=".85"/></svg></span><span class="cap">${esc(msgText(m))}</span>${meta}</div>`;
-      if (m.voice) return `<div class="bub ${cls} voice"><span class="vplay">${ic("play")}</span><span class="vwave">${"<i></i>".repeat(22)}</span><span class="num">${m.voice}</span><span class="bt">${esc(msgTime(m))}${m.human ? " · " + T("humanReply") : ""}${ic("check2")}</span></div>`;
-      return `<div class="bub ${cls}"${tap}>${m.t === "ai" ? `<span class="tag">${ic("sparkle")}${T("aiReply")}</span>` : ""}${m.file ? `<span class="file"><span class="fi">${ic("file")}</span><span><strong style="display:block;font-size:12.5px">${esc(m.file)}</strong><span class="hint">PDF</span></span></span>` : ""}${esc(msgText(m))}${meta}</div>`;
+      if (m.voice) return `<div class="bub ${cls} voice"><span class="vplay">${ic("play")}</span><span class="vwave">${"<i></i>".repeat(22)}</span><span class="num">${m.voice}</span>${meta}</div>`;
+      return `<div class="bub ${cls}"${tap}>${m.file ? `<span class="file"><span class="fi">${ic("file")}</span><span><strong style="display:block;font-size:12.5px">${esc(m.file)}</strong><span class="hint">PDF</span></span></span>` : ""}${esc(msgText(m))}${meta}</div>`;
     }).join("");
   }
   SCR.chat = () => {
@@ -486,13 +493,14 @@
         <div class="cb-row">
           <button class="ibtn sm" data-act="back" aria-label="back">${ic("back")}</button>
           <button class="who" data-act="sheet" data-arg="cust">${av(convName(c), i, "sm", c.num)}
-            <span class="who-t"><strong>${esc(convName(c))}${c.aiOn ? `<span class="ai-mark" title="${T("aiActive")}" aria-label="${T("aiActive")}">${ic("sparkle")}</span>` : ""}<span class="lang">${(c.lang || "ar").toUpperCase()}</span></strong>
-            <span class="sub"><span class="on">${T("online")}</span><i>·</i><span class="ndot ${c.num}"></span>${T(c.num === "main" ? "viaMain" : "viaSecond")}</span></span></button>
-          <button class="ibtn sm" data-act="sheet" data-arg="chatOpts" aria-label="${T("actions")}">${ic("moreV")}</button>
+            <span class="who-t"><strong>${esc(convName(c))}<span class="lang">${(c.lang || "ar").toUpperCase()}</span></strong>
+            <span class="sub">${c.mode === "ai" && !c.closed ? `<span class="ai-mark sub-ai" aria-hidden="true">${ic("sparkle")}</span><span class="who-ai-t">${T("aiAgent")}</span>` : `<span class="who-staff">${ic("user")}${esc(L(c.assignee))}</span>`}<i>·</i><span class="ndot ${c.num}"></span><span class="who-via">${T(c.num === "main" ? "viaMain" : "viaSecond")}</span></span></span></button>
+          ${c.closed ? "" : `<button class="ibtn sm" data-act="sheet" data-arg="closeChat" aria-label="${T("closeChat")}">${ic("check2")}</button>`}
+          <button class="ibtn sm" data-act="sheet" data-arg="cust" aria-label="${T("cpInfo")}">${ic("info")}</button>
         </div>
       </header>
       <div class="msgs" id="msgs">${msgsHtml(c)}</div>
-      ${c.closed ? `<div class="closed-bar surf"><span class="mi c-g">${ic("check2")}</span><div class="cb"><strong>${T("chatClosed")}</strong><span>${T("chatClosedDesc")}</span></div><button class="btn btn-p btn-sm" data-act="reopen">${ic("refresh")}${T("reopenChat")}</button></div>`
+      ${c.closed ? `<div class="closed-bar surf"><span class="mi c-g">${ic("check2")}</span><div class="cb"><strong>${T("chatClosed")}</strong><span>${T("chatClosedShort")}</span></div><button class="btn btn-p btn-sm" data-act="reopen">${ic("refresh")}${T("reopenShort")}</button></div>`
         : `<div class="attach-row" id="attachRow" hidden></div><input type="file" id="fileIn" hidden>
         <div class="composer surf">
         <button class="ibtn sm" data-act="attach" aria-label="${T("export")}">${ic("clip")}</button>
@@ -672,7 +680,7 @@
         <div class="card surf"><div class="fld"><label for="pName">${T("profName")}</label><input id="pName" class="inp" value="هشام العبدالله"></div><div class="fld"><label for="pMail">${T("profEmail")}</label><input id="pMail" class="inp" dir="ltr" value="info@sabalandqa.com"></div><div class="fld"><label for="pPh">${T("profPhone")}</label>${telIn("pPh", "+968 9123 4567")}</div><button class="btn btn-p btn-blk" data-act="profileSave">${ic("check")}${T("save")}</button></div>`,
       appearance: `<div class="card surf"><div class="lbl" style="margin-bottom:8px">${T("appTheme")}</div><div class="seg surf">${["light", "dark", "auto"].map((k) => `<button class="${th === k ? "on" : ""}" data-act="setTheme" data-arg="${k}">${T(k === "light" ? "themeLight" : k === "dark" ? "themeDark" : "themeAuto")}</button>`).join("")}</div>
         <div class="lbl" style="margin:16px 0 8px">${T("appAccent")}</div><div style="display:flex;gap:10px">${["#E0571E", "#6D3639", "#23944A", "#2F6FCF", "#6F4FD6"].map((c) => `<button data-act="accent" data-arg="${c}" aria-label="${c}" style="width:44px;height:44px;border-radius:14px;background:${c};box-shadow:inset 0 1px 0 rgba(255,255,255,.4)"></button>`).join("")}</div></div>`,
-      security: `<div class="card surf">${cardT("lock", T("secChangePass"))}<div class="fld"><label for="pCur">${T("curPass")}</label>${pass("pCur", "********", "••••••••")}</div><div class="fld"><label for="pNew">${T("newPass")}</label>${pass("pNew", "", "••••••••", true)}</div><div class="fld"><label for="pCon">${T("confirmPass")}</label>${pass("pCon", "", "••••••••", true)}<span class="fp-err" id="pErr" hidden></span></div><button class="btn btn-p btn-blk" data-act="updPass">${ic("check")}${T("updatePass")}</button></div>`,
+      security: `<div class="card surf"><div class="fld"><label for="pCur">${T("curPass")}</label>${pass("pCur", "********", "••••••••")}</div><div class="fld"><label for="pNew">${T("newPass")}</label>${pass("pNew", "", "••••••••", true)}</div><div class="fld"><label for="pCon">${T("confirmNewPass")}</label>${pass("pCon", "", "••••••••", true)}<span class="fp-err" id="pErr" hidden></span></div><button class="btn btn-p btn-blk" data-act="updPass">${T("btnUpdate")}${ic("check")}</button></div>`,
       lang: `<div class="card surf"><div class="lbl" style="margin-bottom:8px">${T("langInterface")}</div><div class="seg surf"><button class="${LANG === "ar" ? "on" : ""}" data-act="setLang" data-arg="ar">العربية</button><button class="${LANG === "en" ? "on" : ""}" data-act="setLang" data-arg="en">English</button></div>
         <div class="fld" style="margin-top:14px"><label for="pReg">${T("region")}</label><select id="pReg" class="sel"><option>(GMT+4) مسقط</option><option>(GMT+3) الدوحة</option><option>(GMT+5:30) الهند</option></select></div><div class="fld" style="margin:0"><label for="pDf">${T("dateFormat")}</label><select id="pDf" class="sel"><option>DD/MM/YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select></div></div>`,
       cats: `<div class="chips qr-cats cat-chips2" role="tablist">${CAT_TABS.map(([id, k, , list]) => `<button role="tab" class="chip ${S.catTab === id ? "on" : "surf"}" aria-selected="${S.catTab === id}" data-act="catTab" data-arg="${id}">${T(k)}<span class="cnt">${{ seg: DATA.tags, tags: DATA.convTags, rc: DATA.replyCats }[id].length}</span></button>`).join("")}</div>
@@ -688,14 +696,20 @@
           <div class="hd-t" id="dndTimes" style="opacity:.45;pointer-events:none"><label>${T("from")} <input class="inp" type="time" value="22:00" aria-label="${T("ntDnd")} ${T("from")}"></label><label>${T("to")} <input class="inp" type="time" value="08:00" aria-label="${T("ntDnd")} ${T("to")}"></label></div></div></div>`,
     };
   };
-  const SETTINGS = [["appearance", "tabAppearance", "palette", "c-o"], ["notifs", "ntTitle", "bell", "c-ai"], ["security", "tabSecurity", "shield", "c-b"], ["lang", "tabLang", "globe", "c-g"], ["cats", "catsMgmt", "tag", "c-m"]];
+  const SETTINGS = [["appearance", "tabAppearance", "palette", "c-o"], ["security", "secChangePass", "shield", "c-b"]];
   SCR.profile = () => `<div class="scroller">${subHdr(T("tabProfile"))}${accPanels().profile}</div>`;
-  SCR.account = () => {
+  const settingsList = () => {
     const th = store.get("sa-theme") || "auto";
-    const hint = { appearance: T(th === "light" ? "themeLight" : th === "dark" ? "themeDark" : "themeAuto"), notifs: T("ntOn"), security: T("secChangePass"), lang: LANG === "ar" ? "العربية" : "English", cats: "3" };
-    return `<div class="scroller">${subHdr(T("navSettings"))}
-      <div class="list surf">${SETTINGS.map(([id, k, icn, cls]) => `<button class="row" data-act="go" data-arg="set-${id}"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(k)}</span></span><span class="hint">${esc(hint[id])}</span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div></div>`;
+    const thLbl = T(th === "light" ? "themeLight" : th === "dark" ? "themeDark" : "themeAuto");
+    const page = (id, k, icn, cls, hint) => `<button class="row" data-act="go" data-arg="set-${id}"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(k)}</span></span><span class="hint">${esc(hint || "")}</span><span class="chev">${ic("chevE")}</span></button>`;
+    const swRow = (id, k, icn, cls, on) => `<label class="row set-sw"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(k)}</span></span>${sw(on, `id="${id}"`)}</label>`;
+    const group = (title, rows) => `<div class="sec"><div class="sec-h"><h3>${title}</h3></div><div class="list surf">${rows}</div></div>`;
+    return group(T("grpPrefs"), `${swRow("setNt", "ntTitle", "bell", "c-ai", S.ntOn)}
+        <button class="row" data-act="sheet" data-arg="themeSheet"><span class="mi c-o">${ic("palette")}</span><span class="rb"><span class="rn">${T("tabAppearance")}</span></span><span class="hint">${esc(thLbl)}</span><span class="chev">${ic("chevE")}</span></button>
+        <button class="row" data-act="sheet" data-arg="langSheet"><span class="mi c-g">${ic("globe")}</span><span class="rb"><span class="rn">${T("langOnly")}</span></span><span class="hint">${LANG === "ar" ? "العربية" : "English"}</span><span class="chev">${ic("chevE")}</span></button>`) + group(T("tabSecurity"), `${swRow("setBio", "bioSetting", "finger", "c-g", S.bio)}
+        ${page("security", "secChangePass", "lock", "c-b", "")}`);
   };
+  SCR.account = () => `<div class="scroller">${subHdr(T("navSettings"))}${settingsList()}</div>`;
   // conversation tags keep their page, now reached from "إدارة التصنيفات"
   SCR["set-tags"] = () => `<div class="scroller">${subHdr(T("tabTags"), "", T("tagsSub"))}${accPanels().tags}</div>`;
   SCR["reply-cats"] = () => `<div class="scroller">${subHdr(T("replyCatTitle"), "", T("replyCatSub"))}
@@ -705,19 +719,12 @@
 
   const APP_VERSION = "1.0.0"; // shown on the splash and at the bottom of "More"
   SCR.more = () => {
-    const item = (go, icn, cls, key) => `<button class="row" data-act="go" data-arg="${go}"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(key)}</span></span><span class="chev">${ic("chevE")}</span></button>`;
     return `<div class="scroller">
-      ${hdr(T("tabMore"), "", bellBtn())}
+      ${hdr(T("tabMine"), "", bellBtn())}
       <button class="prof surf" data-act="go" data-arg="profile" aria-label="${T("tabProfile")}">${meAv("width:60px;height:60px;font-size:22px")}<span class="rb" style="flex:1;text-align:start"><strong>هشام العبدالله</strong><span dir="ltr" style="text-align:${LANG === "ar" ? "right" : "left"}">info@sabalandqa.com</span><span class="prof-link">${T("viewProfile")}</span></span><span class="chev">${ic("chevE")}</span></button>
-      <div class="sec"><div class="sec-h"><h3>${T("grpMkt")}</h3></div><div class="list surf">
-        ${item("replies", "bolt", "c-o", "navReplies")}
-        ${item("campaigns", "campaign", "c-m", "navCampaigns")}
-        ${item("reports", "reports", "c-b", "navReports")}</div></div>
-      <div class="sec"><div class="sec-h"><h3>${T("grpAcct")}</h3></div><div class="list surf">
-        ${item("team", "users", "c-b", "navTeam")}
-        ${item("account", "settings", "c-g", "navSettings")}</div></div>
+      ${settingsList()}
       <div class="sec"><button class="btn btn-d btn-blk" data-act="logout">${ic("logout")}${T("logout")}</button></div>
-      <p class="app-ver">${T("brandName")} · ${T("version")} <span class="num" dir="ltr">${APP_VERSION}</span></p>
+      <p class="app-ver">${T("version")} <span class="num" dir="ltr">${APP_VERSION}</span></p>
     </div>`;
   };
 
@@ -793,9 +800,10 @@
       <div class="lg-top"><svg class="lg-mark" viewBox="0 0 1200 1528" role="img" aria-label="${T("brandName")}"><use href="#lg-mark"/><use href="#lg-textAr"/><use href="#lg-textEn"/></svg>
         <h2>${T("loginTitle")}</h2><p class="lg-sub">${T("loginDesc")}</p></div>
       <form class="lg-form surf-2" id="loginForm">
-        <div class="fld"><label for="lgMail">${T("loginEmail")}</label><div class="ifield"><span class="if-ic">${ic("mail")}</span><input id="lgMail" class="inp" type="email" dir="ltr" placeholder="name@sabalandqa.com" autocomplete="off"></div></div>
-        <div class="fld"><label for="lgPass">${T("loginPass")}</label>${pass("lgPass", "", "••••••••")}</div>
-        <button class="btn btn-o btn-blk" type="submit">${T("loginBtn")}</button>
+        <div class="fld"><label for="lgMail">${T("loginEmail")}</label><div class="ifield"><span class="if-ic">${ic("mail")}</span><input id="lgMail" class="inp" type="email" dir="ltr" value="${DEMO.email}" placeholder="name@sabalandqa.com" autocomplete="off"></div></div>
+        <div class="fld"><label for="lgPass">${T("loginPass")}</label>${pass("lgPass", DEMO.pass, "••••••••")}</div>
+        <div class="lg-actions"><button class="btn btn-o" type="submit">${T("loginBtn")}</button>
+          <button type="button" class="bio-key surf${S.bio ? " on" : ""}" data-act="bioTap" aria-label="${T("bioLogin")}">${ic("finger")}</button></div>
       </form></div>`;
 
   /* ---------- sheets ---------- */
@@ -809,7 +817,7 @@
     ${(() => { const opts = [{ id: "all" }].concat(DATA.tags), cnt = (t) => (t.id === "all" ? DATA.contacts.length : DATA.contacts.filter((k) => k.tag === t.id).length);
       const row = (t) => `<span class="mi ${t.id === "all" ? "c-m" : "seg-dot"}" ${t.id === "all" ? "" : `style="--c:var(--${tagVar(t.color)})"`}>${ic(t.id === "all" ? "users" : "tag")}</span><span class="ob"><strong>${t.id === "all" ? T("fltAll") : esc(L(t))}</strong><span>${cnt(t)} ${T("segCount")}</span></span>`;
       const cur = opts.find((t) => t.id === S.fTag) || opts[0];
-      return `<div class="fld"><label for="cfTag" class="lbl-row">${T("fltTag")}<button type="button" class="lnk-add" data-act="fltManage">${T("fltManage")}</button></label><div class="dd">
+      return `<div class="fld"><label for="cfTag">${T("fltTag")}</label><div class="dd">
         <button type="button" class="sel dd-btn has" id="cfTag" data-act="ddToggle" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">${row(cur)}</span>${ic("chevD")}</button>
         <div class="dd-panel surf" hidden><div class="search dd-search">${ic("search")}<input id="ddQ" type="search" placeholder="${T("search")}" aria-label="${T("search")}" autocomplete="off"><button type="button" class="dd-x" data-act="ddClose" aria-label="${T("cancel")}">${ic("chevD")}</button></div>
           <div class="dd-list" role="listbox">${opts.map((t) => `<button type="button" class="opt${S.fTag === t.id ? " on" : ""}" role="option" data-act="fltSet" data-arg="fTag:${t.id}" data-q="${esc((t.id === "all" ? T("fltAll") : t.ar + " " + t.en).toLowerCase().replace(/s/g, ""))}">${row(t)}${S.fTag === t.id ? `<span style="color:var(--accent)">${ic("check")}</span>` : ""}</button>`).join("")}
@@ -832,19 +840,21 @@
     <div class="fld"><label for="ncFrom">${T("fromNumber")}</label><select id="ncFrom" class="sel"><option value="main">${numLabel("main")}</option><option value="second">${numLabel("second")}</option></select></div></div>` + shFoot(`<button class="btn btn-o" data-act="ncStart">${ic("chat")}${T("startChat")}</button>`);
   SH.cust = () => {
     const c0 = getConv(S.chat), i = DATA.conversations.indexOf(c0);
-    const c = S.custDraft ? Object.assign({}, c0, S.custDraft) : c0; // keeps unsaved picks across the "add segment" sheet
-    S.custDraft = null;
+    if (S.custDraft) Object.assign(c0, S.custDraft); // a tag / segment just created from this sheet is applied straight away
+    const c = c0; S.custDraft = null;
     return `<div class="cust-hero">${av(convName(c), i, "lg")}
       <div class="ch-t"><h3>${esc(convName(c))}</h3><p dir="ltr">${c.phone}</p>
         <div class="ch-b">${badge(tagById(c.tag))}${c.convTag ? badge(ctagById(c.convTag)) : ""}<span class="badge b-gray"><span class="ndot ${c.num}" style="width:6px;height:6px"></span>${numLabel(c.num)}</span></div></div>
       <button class="ibtn sm surf" data-act="closeSheet" aria-label="close">${ic("x")}</button></div>
-    <div class="sh-b"><div class="fld"><label for="cuTag" class="lbl-row">${T("convTag")}<button type="button" class="lnk-add" data-act="openTag">${ic("plus")}${T("addConvTag")}</button></label><select id="cuTag" class="sel"><option value="">${T("noTag")}</option>${DATA.convTags.map((t) => `<option value="${t.id}" ${t.id === c.convTag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
+    <div class="sh-b">
+      ${c.mode === "ai" && !c.closed ? `<label class="card surf ai-sw-row"><span class="mi c-ai">${ic("sparkle")}</span><span class="rb"><strong>${T("aiReplySw")}</strong><small>${T("aiReplySwD")}</small></span>${sw(!!c.aiOn, 'id="aiSw"')}</label>` : ""}
+      <div class="fld"><label for="cuTag" class="lbl-row">${T("convTag")}<button type="button" class="lnk-add" data-act="openTag">${ic("plus")}${T("addConvTag")}</button></label><select id="cuTag" class="sel"><option value="">${T("noTag")}</option>${DATA.convTags.map((t) => `<option value="${t.id}" ${t.id === c.convTag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
       <div class="fld"><label for="cuSeg" class="lbl-row">${T("cpClass")}<button type="button" class="lnk-add" data-act="openSeg">${ic("plus")}${T("addClass")}</button></label><select id="cuSeg" class="sel">${DATA.tags.map((t) => `<option value="${t.id}" ${t.id === c.tag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
       <div class="card surf cust-info"><div class="kv"><span>${T("cpFirst")}</span><strong>${esc(L(c.first))}</strong></div><div class="kv"><span>${T("cpConvs")}</span><strong>${c.count}</strong></div><div class="kv"><span>${T("cpLastTopic")}</span><strong>${esc(L(c.topic))}</strong></div><div class="kv"><span>${T("cpLang")}</span><strong>${langLabel(c.lang)}</strong></div></div>
       <div class="fld"><label for="cuNote">${T("cpNotes")}</label><textarea id="cuNote" class="ta" rows="2" placeholder="${T("cpNotePh")}">${esc(c.note || "")}</textarea></div>
       <div class="lbl cust-hist">${T("cpHistory")}${c.history && c.history.length ? ` (${c.history.length})` : ""}</div>
       ${c.history && c.history.length ? `<div class="clist">${c.history.map((h) => `<div class="row surf conv-card hist-card"><span class="mi ${h.by === "AI" ? "c-ai" : "c-b"}">${ic(h.by === "AI" ? "sparkle" : "user")}</span><span class="rb"><span class="rn">${esc(L(h.topic))}</span><span class="rs" style="margin-top:2px">${esc(L(h.date))} · ${esc(h.by)}</span></span></div>`).join("")}</div>` : `<p class="hint">${T("cpNoHistory")}</p>`}
-      </div><div class="sh-f"><button class="btn btn-g surf" data-act="sheet" data-arg="transfer">${ic("transfer")}${T("transfer")}</button><button class="btn btn-p" data-act="custSave">${T("save")}</button></div>`;
+      </div><div class="sh-f qa-foot"><div class="quick-acts">${[["call", "phone", "c-g", "qaCall", "callBtn"], ["transfer", "transfer", "c-b", "qaTransfer", "transfer"]].concat(c.closed ? [] : [["closeChat", "check2", "c-o", "qaClose", "closeChat"]]).map(([arg, icn, cls, k, full]) => `<button class="qa" data-act="sheet" data-arg="${arg}" aria-label="${T(full)}"><span class="mi ${cls}">${ic(icn)}</span><span>${T(k)}</span></button>`).join("")}</div></div>`;
   };
   const swatches = (id, colors, cur) => `<div class="lbl" style="margin-bottom:8px">${T("colorLbl")}</div><div class="swatches" id="${id}">${colors.map((c) => `<button type="button" class="badge b-${c}${c === cur ? " on" : ""}" data-act="pickColor" data-arg="${c}" aria-label="${c}">●</button>`).join("")}</div>`;
   SH.segForm = (id) => { const t = id && DATA.tags.find((x) => x.id === id); return shHead(t ? T("edit") : T("segNew")) + `<div class="sh-b">
@@ -881,9 +891,13 @@
     <div class="sh-b" style="padding-bottom:22px">${DATA.quickReplies.map((q) => `<button class="qr surf" data-act="qrPick" data-arg="${q.id}" data-cat="${q.cat}" data-q="${esc((L(q.title) + " " + L(q.body)).toLowerCase())}"><span class="qh"><strong>${esc(L(q.title))}</strong><span class="badge b-gray">${esc(L(catBy(q.cat)))}</span></span><p>${esc(L(q.body))}</p></button>`).join("")}<p class="hint dd-empty" id="qrEmpty" hidden>${T("ddEmpty")}</p></div>`;
   SH.emoji = () => shHead(T("emojis")) + `<div class="sh-b" style="padding-bottom:22px"><div class="emo">${["🐝", "🍯", "🌿", "✅", "🙏", "🌟", "📦", "🚚", "❤️", "😊", "👌", "🎁", "💛", "🌹", "🌷", "🍃", "☀️", "🌙", "👍", "😍", "🤲"].map((e) => `<button data-act="emoji" data-arg="${e}">${e}</button>`).join("")}</div></div>`;
   SH.call = () => { const c = getConv(S.chat), i = DATA.conversations.indexOf(c); return shHead(T("callTitle") + convName(c), T("callDesc")) + `<div class="sh-b" style="text-align:center"><div class="call-av" style="background:${avColor(i)}">${esc(initials(convName(c)))}</div><h3 style="margin-top:16px">${esc(convName(c))}</h3><p class="hint" dir="ltr" style="font-size:14px">${c.phone}</p><p class="hint" style="display:flex;gap:6px;justify-content:center;align-items:center;margin-top:4px"><span class="ndot ${c.num}"></span>${numLabel(c.num)}</p></div>` + shFoot(`<button class="btn btn-o" data-act="callDo" style="background:linear-gradient(135deg,#2BB35A,#1C8A43);box-shadow:0 12px 26px -10px rgba(35,148,74,.6)">${ic("phone")}${T("callNow")}</button>`); };
-  SH.chatOpts = () => { const c = getConv(S.chat), it = [["sheet", "cust", "info", "c-m", T("cpInfo")], ["sheet", "call", "phone", "c-g", T("callBtn")], ["sheet", "transfer", "transfer", "c-b", T("transfer")], ["sheet", "cust", "tag", "c-o", c.convTag ? `${T("convTag")}: ${esc(L(ctagById(c.convTag)))}` : T("convTag")]];
-    if (!c.closed) it.push(["sheet", "closeChat", "check2", "c-g", T("closeChat")]);
-    return actsSheet(convName(c), it); };
+  // looks like the phone's own fingerprint prompt; succeeds on its own after a moment
+  SH.bio = () => `<div class="bio-sheet"><p class="bio-app">${T("brandName")}</p><h3>${T("bioLogin")}</h3>
+    <button type="button" class="bio-ic" data-act="bioOk" aria-label="${T("bioLogin")}">${ic("finger")}</button><p class="bio-hint" id="bioHint">${T("bioHint")}</p>
+    <button type="button" class="btn btn-g surf btn-blk" data-act="closeSheet">${T("cancel")}</button></div>`;
+  SH.themeSheet = () => { const cur = store.get("sa-theme") || "auto";
+    return shHead(T("tabAppearance")) + `<div class="sh-b" style="padding-bottom:22px"><div class="rng-list">${[["light", "themeLight", "sun"], ["dark", "themeDark", "moon"], ["auto", "themeAuto", "monitor"]].map(([k, lbl, icn]) => `<button class="rng-it surf lang-it${cur === k ? " on" : ""}" data-act="themePick" data-arg="${k}"><span class="mi c-o th-ic">${ic(icn)}</span><span class="rb"><strong>${T(lbl)}</strong></span>${cur === k ? `<span class="rng-ck">${ic("check")}</span>` : ""}</button>`).join("")}</div></div>`; };
+  SH.langSheet = () => shHead(T("langOnly")) + `<div class="sh-b" style="padding-bottom:22px"><div class="rng-list">${[["ar", "العربية", "om"], ["en", "English", "gb"]].map(([l, n, fl]) => `<button class="rng-it surf lang-it${LANG === l ? " on" : ""}" data-act="langPick" data-arg="${l}">${flag(fl)}<span class="rb"><strong>${n}</strong></span>${LANG === l ? `<span class="rng-ck">${ic("check")}</span>` : ""}</button>`).join("")}</div></div>`;
   SH.closeChat = () => shHead(T("closeChatTitle"), T("closeChatMsg")) + shFoot(`<button class="btn btn-p" data-act="closeChatDo">${ic("check2")}${T("closeChat")}</button>`);
   // dashboard rules: own text messages can be edited for 15 minutes and deleted for 48 hours (dashboard copy only)
   const canEdit = (m) => !m.file && !m.voice && !m.img && m.at && Date.now() - m.at < 15 * 60e3;
@@ -895,12 +909,18 @@
   SH.sendCamp = (id) => shHead(T("cmpSend"), T("cmpChunkConfirm")) + shFoot(`<button class="btn btn-o" data-act="sendCampDo" data-arg="${id}">${ic("send")}${T("cmpSend")}</button>`);
   SH.confirm = () => shHead(T("confirmTitle"), T("confirmMsg")) + shFoot(`<button class="btn btn-d" data-act="confirmYes">${ic("trash")}${T("delete")}</button>`);
   const actsSheet = (title, items, top) => shHead(title) + `<div class="sh-b" style="padding-bottom:22px">${top || ""}<div class="acts">${items.map(([act, arg, icn, cls, label]) => `<button class="opt act-it surf${act === "askDel" ? " danger" : ""}" data-act="${act}" data-arg="${arg}"><span class="mi ${cls}">${ic(icn)}</span><span class="ob"><strong>${label}</strong></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div></div>`;
-  SH.contactActs = (id) => { const k = DATA.contacts.find((x) => x.id === id); return actsSheet(cName(k), [["chatWith", id, "chat", "c-g", T("openChat")], ["sheet", "contactForm:" + id, "pen", "c-b", T("edit")], ["askDel", "contact:" + id, "trash", "c-r", T("delete")]], `<div class="c-info surf">
+  SH.contactActs = (id) => { const k = DATA.contacts.find((x) => x.id === id);
+    return `<div class="sh-h"><div class="sh-t"><h3>${esc(cName(k))}</h3></div>
+      <button class="ibtn sm surf" data-act="sheet" data-arg="contactForm:${id}" aria-label="${T("edit")}">${ic("pen")}</button>
+      <button class="ibtn sm surf ib-danger" data-act="askDel" data-arg="contact:${id}" aria-label="${T("delete")}">${ic("trash")}</button>
+      <button class="ibtn sm surf" data-act="closeSheet" aria-label="close">${ic("x")}</button></div>
+    <div class="sh-b"><div class="c-info surf" style="margin-bottom:0">
       <div class="kv"><span>${T("cPhone")}</span><strong dir="ltr">${k.ph}</strong></div>
       <div class="kv"><span>${T("thTag")}</span>${badge(tagById(k.tag))}</div>
       <div class="kv"><span>${T("thLang")}</span><strong>${langLabel(k.lang)}</strong></div>
       <div class="kv"><span>${T("cpConvs")}</span><strong>${k.conv}</strong></div>
-      <div class="kv"><span>${T("thLastSeen")}</span><strong>${esc(L(k.last))}</strong></div></div>`); };
+      <div class="kv"><span>${T("thLastSeen")}</span><strong>${esc(L(k.last))}</strong></div></div></div>
+    <div class="sh-f"><button class="btn btn-p btn-blk" data-act="sheet" data-arg="newConv:${id}">${ic("chat")}${T("newConvTitle")}</button></div>`; };
   SH.replyActs = (id) => actsSheet(L(DATA.quickReplies.find((x) => x.id === id).title), [["sheet", "replyForm:" + id, "pen", "c-b", T("edit")], ["dupReply", id, "copy", "c-o", T("duplicate")], ["askDel", "reply:" + id, "trash", "c-r", T("delete")]]);
   SH.campActs = (id) => actsSheet(L(DATA.campaigns.find((x) => x.id === id).n), [["sheet", "campForm:" + id, "pen", "c-b", T("edit")]].concat(DATA.campaigns.find((x) => x.id === id).st === "sending" ? [] : [["sheet", "sendCamp:" + id, "send", "c-g", T("cmpSend")]], [["dupCamp", id, "copy", "c-o", T("duplicate")], ["askDel", "camp:" + id, "trash", "c-r", T("delete")]]));
   const mStatus = (m) => (m.status === "active" ? `<span class="badge b-green dot">${T("stMActive")}</span>` : `<span class="badge b-gray dot">${T("stMDisabled")}</span>`);
@@ -973,7 +993,7 @@
     const u = unreadTotal();
     $("#tabbar").hidden = !showTabs;
     $("#app").classList.toggle("has-tabs", showTabs);
-    $("#tabbar").innerHTML = [["overview", "home", "tabHome"], ["conversations", "chat", "tabChats"], ["contacts", "users", "tabContacts"], ["more", "grid", "tabMore"]]
+    $("#tabbar").innerHTML = [["conversations", "chat", "tabChats"], ["contacts", "users", "tabContacts"], ["overview", "reports", "navReports"], ["more", "user", "tabMine"]]
       .map(([id, icn, k]) => `<button class="tab ${cur === id ? "on" : ""}" data-act="tab" data-arg="${id}" aria-label="${T(k)}">${ic(icn)}<span>${T(k)}</span>${id === "conversations" && u ? `<span class="tb">${u}</span>` : ""}</button>`).join("");
     after();
     decorate(view);
@@ -1043,7 +1063,7 @@
     const q = $("#convQ"); if (q) q.addEventListener("input", (e) => { S.q = e.target.value; $("#convList").innerHTML = convList(); });
     const cq = $("#contQ"); if (cq) cq.addEventListener("input", (e) => { S.cq = e.target.value; $("#contList").innerHTML = contactRows(); });
     ["fTag", "fLang", "fNum"].forEach((id) => { const s = $("#" + id); if (s) s.addEventListener("change", (e) => { S[id] = e.target.value; render(); }); });
-    const d = $("#draft"); if (d) { d.addEventListener("input", () => { d.style.height = "auto"; d.style.height = Math.min(d.scrollHeight, 110) + "px"; }); d.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ACT.send(); } }); }
+    const d = $("#draft"); if (d) { d.addEventListener("input", () => { const box = d.closest(".composer"); if (!d.value) box.classList.remove("multi"); d.style.height = "auto"; if (d.scrollHeight > 46 && !box.classList.contains("multi")) { box.classList.add("multi"); d.style.height = "auto"; } d.style.height = Math.min(d.scrollHeight, 110) + "px"; }); d.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ACT.send(); } }); }
     const t = $("#aiTemp"); if (t) t.addEventListener("input", (e) => { $("#tempV").textContent = e.target.value; });
     document.querySelectorAll("[data-num]").forEach((cb) => cb.addEventListener("change", (e) => {
       const id = e.target.dataset.num, on = e.target.checked, b = $("#nst-" + id);
@@ -1063,13 +1083,15 @@
     if (sc) { let last = sc.scrollTop; sc.addEventListener("scroll", () => { const y = sc.scrollTop, d = y - last; if (Math.abs(d) < 8) return; app.classList.toggle("hide-chrome", d > 0 && y > 60); last = y; }, { passive: true }); }
     const nm = $("#ntMaster"); if (nm) { const apply = () => { const rest = $(".nt-rest"); rest.classList.toggle("is-off", !S.ntOn); rest.querySelectorAll("input").forEach((i) => { i.disabled = !S.ntOn; }); };
       apply(); nm.addEventListener("change", (e) => { S.ntOn = e.target.checked; apply(); toast("toastSaved"); }); }
+    const sn = $("#setNt"); if (sn) sn.addEventListener("change", (e) => { S.ntOn = e.target.checked; toast(S.ntOn ? "ntOnT" : "ntOffT"); });
+    const sb = $("#setBio"); if (sb) sb.addEventListener("change", (e) => { S.bio = e.target.checked; store.set("sa-bio", S.bio ? "1" : "0"); toast(S.bio ? "bioOn" : "bioOff"); });
     const dnd = $("#dndSw"); if (dnd) dnd.addEventListener("change", (e) => { const t = $("#dndTimes"); t.style.opacity = e.target.checked ? "1" : ".45"; t.style.pointerEvents = e.target.checked ? "" : "none"; });
     bindForgot();
     const ph = $("#photoIn"); if (ph) ph.addEventListener("change", (e) => {
       const f = e.target.files[0]; if (!f) return;
       const rd = new FileReader(); rd.onload = () => { S.photo = rd.result; render(); toast("toastSaved"); }; rd.readAsDataURL(f);
     });
-    const lf = $("#loginForm"); if (lf) lf.addEventListener("submit", (e) => { e.preventDefault(); if (!validate("login")) return; go("overview"); toast("toastWelcome"); });
+    const lf = $("#loginForm"); if (lf) lf.addEventListener("submit", (e) => { e.preventDefault(); if (!validate("login")) return; go("conversations"); if (S.bioPending && !S.bio) { S.bio = true; S.bioPending = false; store.set("sa-bio", "1"); toast("bioOn"); } else toast("toastWelcome"); });
   }
   function go(screen, opts) {
     closeSheet(true); ccClose(true);
@@ -1080,6 +1102,7 @@
   }
 
   function openSheet(spec) {
+    if (spec === "bio") setTimeout(() => { if (S.sheet === "bio") ACT.bioOk(); }, 1700);
     const [type, arg] = String(spec).split(":");
     S.sheet = type; S.sheetArg = arg || null;
     const host = $("#sheetHost");
@@ -1245,10 +1268,23 @@
     if (f) { box.querySelector(".fb-n").textContent = f.name; box.querySelector(".fb-s").textContent = f.size >= 1048576 ? (f.size / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(f.size / 1024)) + " KB"; }
   }
   document.addEventListener("change", (e) => { if (e.target.classList && e.target.classList.contains("file-hidden")) fileBoxSync(e.target); });
+  function showDlg(icn, title, text, ok) {
+    const old = $("#dlg"); if (old) old.remove();
+    $("#app").insertAdjacentHTML("beforeend", `<div class="dlg-scrim" id="dlg" data-act="dlgClose"><div class="dlg surf" role="alertdialog" aria-modal="true" aria-labelledby="dlgT">
+      <span class="dlg-ic">${ic(icn)}</span><h3 id="dlgT">${title}</h3><p>${text}</p><button type="button" class="btn btn-p btn-blk" data-act="dlgClose">${ok}</button></div></div>`);
+    const d = $("#dlg"); void d.offsetWidth; d.classList.add("show");
+  }
   function filterDD(panel, s) {
     let n = 0; panel.querySelectorAll(".opt[data-q]").forEach((o) => { const hit = !s || o.dataset.q.includes(s); o.hidden = !hit; if (hit) n++; });
     panel.querySelector(".dd-empty").hidden = !!n;
   }
+  // tag and segment save on change; notes save a moment after typing stops
+  document.addEventListener("change", (e) => { if (e.target.id !== "cuTag" && e.target.id !== "cuSeg") return; const c = getConv(S.chat); if (!c) return;
+    if (e.target.id === "cuTag") c.convTag = e.target.value || null; else c.tag = e.target.value;
+    render(); refreshSheet(); toast("toastSaved"); });
+  let noteT; document.addEventListener("input", (e) => { if (e.target.id !== "cuNote") return; clearTimeout(noteT); const v = e.target.value;
+    noteT = setTimeout(() => { const c = getConv(S.chat); if (c && c.note !== v) { c.note = v; toast("toastSaved"); } }, 900); });
+  document.addEventListener("change", (e) => { if (e.target.id !== "aiSw") return; const c = getConv(S.chat); if (!c) return; c.aiOn = e.target.checked; c.mode = c.aiOn ? "ai" : "human"; render(); toast(c.aiOn ? "aiOnT" : "aiOffT"); });
   document.addEventListener("input", (e) => { if (e.target.id === "qrQ") filterQR(); if (e.target.id === "ddQ") filterDD(e.target.closest(".dd-panel"), e.target.value.trim().toLowerCase().replace(/s/g, "")); });
   function toast(key, kind) {
     const t = $("#toast");
@@ -1279,7 +1315,7 @@
       S.prev = "notifications"; go(n.go[0]);
     },
     ntReadAll: () => { NOTIFS.forEach((n) => { n.unread = false; }); render(); toast("ntAllRead"); },
-    back: () => go((S.screen === "segments" || S.screen === "set-cats") && S.prev === "contacts" ? "contacts" : ["segments", "set-tags", "reply-cats"].includes(S.screen) ? "set-cats" : S.screen === "notifications" ? S.tab : S.prev === "notifications" && S.screen !== "notifications" && !TABS.includes(S.screen) ? (S.prev = null, "notifications") : S.screen === "chat" ? "conversations" : S.screen.startsWith("set-") ? "account" : SUBS.includes(S.screen) ? "more" : S.tab),
+    back: () => go((S.screen === "segments" || S.screen === "set-cats") && S.prev === "contacts" ? "contacts" : ["segments", "set-tags", "reply-cats"].includes(S.screen) ? "set-cats" : S.screen === "notifications" ? S.tab : S.prev === "notifications" && S.screen !== "notifications" && !TABS.includes(S.screen) ? (S.prev = null, "notifications") : S.screen === "chat" ? "conversations" : S.screen.startsWith("set-") ? "more" : SUBS.includes(S.screen) ? "more" : S.tab),
     copyText: (v) => { const done = () => toast("copied"); try { navigator.clipboard.writeText(v).then(done, done); } catch (e) { done(); } },
     openChat: (id) => { S.chat = id; const c = getConv(id); if (c) c.unread = 0; go("chat"); },
     chatWith: (id) => { const k = DATA.contacts.find((x) => x.id === id); const c = DATA.conversations.find((x) => x.phone === k.ph); if (c) ACT.openChat(c.id); else { closeSheet(); toast("toastSent"); } },
@@ -1296,20 +1332,14 @@
     send: () => {
       const d = $("#draft"); if (!d) return; const v = d.value.trim(); if (!v && !S.attach) return;
       const c = getConv(S.chat), t = nowLabel();
-      const msg = { t: "out", x: v || "📎", xe: v || "📎", tm: t, tme: t, human: true, at: Date.now() };
+      const msg = { t: "out", x: v || "📎", xe: v || "📎", tm: t, tme: t, human: true, by: ME, at: Date.now() };
       if (S.attach) { msg.file = S.attach; ACT.dropAttach(); }
       c.msgs.push(msg); c.time = c.timeEn = t;
-      $("#msgs").innerHTML = msgsHtml(c); $("#msgs").scrollTop = 1e6; d.value = ""; d.style.height = "auto";
+      $("#msgs").innerHTML = msgsHtml(c); $("#msgs").scrollTop = 1e6; d.value = ""; d.style.height = "auto"; d.closest(".composer").classList.remove("multi");
       if (c.aiOn) simReply(c);
     },
     attach: () => { const fi = $("#fileIn"); if (fi) fi.click(); },
     dropAttach: () => { S.attach = null; const r = $("#attachRow"); if (r) { r.hidden = true; r.innerHTML = ""; } const fi = $("#fileIn"); if (fi) fi.value = ""; },
-    custSave: () => {
-      if (!validate("cust")) return;
-      const c = getConv(S.chat);
-      c.convTag = $("#cuTag").value || null; c.tag = $("#cuSeg").value; c.note = $("#cuNote").value;
-      closeSheet(true); render(); toast("toastSaved");
-    },
     openTag: () => { S.tagDraft = { tag: $("#cuSeg").value, note: $("#cuNote").value }; openSheet("tagForm"); },
     openSeg: () => { S.segDraft = { convTag: $("#cuTag").value || null, note: $("#cuNote").value }; openSheet("segForm"); },
     // segment form serves the segments page and the customer sheet ("إضافة تصنيف"), which it returns to
@@ -1335,6 +1365,11 @@
     msgDelDo: (i) => { const c = getConv(S.chat); c.msgs[+i].deleted = true; closeSheet(true); $("#msgs").innerHTML = msgsHtml(c); toast("toastDeleted"); },
     sendCampDo: (id) => { const cp = DATA.campaigns.find((x) => x.id === id); cp.st = "sending"; closeSheet(true); render(); toast("toastCampSending"); },
     catTab: (t) => { S.catTab = t; render(); },
+    bioOk: () => { const s = $(".bio-sheet"); if (!s || s.classList.contains("ok")) return; s.classList.add("ok"); $("#bioHint").textContent = T("bioOk"); setTimeout(() => { closeSheet(true); go("conversations"); toast("toastWelcome"); }, 650); },
+    bioTap: () => { if (S.bio) return openSheet("bio"); S.bioPending = true; showDlg("finger", T("bioOffT"), T("bioOffD"), T("bioGotIt")); },
+    dlgClose: (a, el, e) => { if (el.id === "dlg" && e && e.target !== el) return; const d = $("#dlg"); if (!d) return; d.classList.remove("show"); setTimeout(() => d.remove(), 220); },
+    themePick: (t) => { closeSheet(true); setTheme(t); },
+    langPick: (l) => { closeSheet(true); if (l !== LANG) setLang(l); },
     fbClear: (a, el) => { const inp = el.closest(".filebox").querySelector("input[type=file]"); inp.value = ""; fileBoxSync(inp); inp.dispatchEvent(new Event("input", { bubbles: true })); },
     qrSheetCat: (c, el) => { el.parentElement.querySelectorAll(".chip").forEach((b) => { b.classList.toggle("on", b === el); b.classList.toggle("surf", b !== el); }); filterQR(); },
     qrCat: (c, el) => { S.qrCat = c; render(); const on = $(".qr-cats .chip.on"); if (on) on.scrollIntoView({ inline: "nearest", block: "nearest" }); },
@@ -1349,7 +1384,7 @@
     voiceSend: () => {
       const len = $("#recT").textContent === "0:00" ? "0:03" : $("#recT").textContent; ACT.voiceCancel();
       const c = getConv(S.chat), t = nowLabel();
-      c.msgs.push({ t: "out", x: "🎤 " + T("voiceNote"), xe: "🎤 Voice message", tm: t, tme: t, human: true, voice: len, at: Date.now() });
+      c.msgs.push({ t: "out", x: "🎤 " + T("voiceNote"), xe: "🎤 Voice message", tm: t, tme: t, human: true, by: ME, voice: len, at: Date.now() });
       c.time = c.timeEn = t; $("#msgs").innerHTML = msgsHtml(c); $("#msgs").scrollTop = 1e6; toast("voiceRecorded");
     },
     eye: (id, el) => { const i = $("#" + id), show = i.type === "password"; i.type = show ? "text" : "password"; el.innerHTML = ic(show ? "eyeOff" : "eye"); },
@@ -1365,8 +1400,8 @@
     },
     regen: () => { const a = "abcdefghjkmnpqrstuvwxyz23456789"; let s = "saba_"; for (let i = 0; i < 14; i++) s += a[Math.floor(Math.random() * a.length)]; $("#mtV").value = s; },
     qrPick: (id) => { const q = DATA.quickReplies.find((x) => x.id === id); const c = getConv(S.chat); q.used++; closeSheet(); const d = $("#draft"); if (d) { d.value = L(q.body).replace(/\{\{(اسم_العميل|customer_name)\}\}/g, convName(c)).replace(/\{\{(التاريخ|date)\}\}/g, new Date().toLocaleDateString(LANG === "ar" ? "ar-OM" : "en-GB")); d.focus(); d.dispatchEvent(new Event("input")); } },
-    emoji: (e) => { const d = $("#draft"); if (d) { d.value += e; } closeSheet(); },
-    transferDo: () => { if (!validate("transfer")) return; const c = getConv(S.chat); if (c) { c.aiOn = false; c.mode = "human"; } closeSheet(true); render(); toast("toastTransfer"); },
+    emoji: (e) => { const d = $("#draft"); if (d) { d.value += e; d.dispatchEvent(new Event("input")); } closeSheet(); },
+    transferDo: () => { if (!validate("transfer")) return; const c = getConv(S.chat); const pick = $("#trAg"), ag = DATA.agents.find((a) => a.id === (pick && pick.dataset.value)) || DATA.agents.filter((a) => a.status === "active")[0]; if (c) { c.aiOn = false; c.mode = "human"; c.assignee = agentName(ag); } closeSheet(true); render(); toast("toastTransfer"); },
     closeChatDo: () => { const c = getConv(S.chat); c.closed = true; c.aiOn = false; closeSheet(true); render(); toast("toastChatClosed"); },
     reopen: () => { const c = getConv(S.chat); c.closed = false; render(); toast("toastChatReopened"); },
     callDo: () => { closeSheet(); toast("toastCallStarted"); },
@@ -1374,7 +1409,6 @@
       if (a === "reset") { S.fTag = S.fLang = "all"; } else { const [k, v] = a.split(":"); S[k] = v; }
       render(); if (S.sheet === "contFilter") refreshSheet();
     },
-    fltManage: () => { closeSheet(true); S.catTab = "seg"; S.prev = "contacts"; go("set-cats"); },
     pickNum: (n) => { S.num = n; closeSheet(); render(); },
     ncPick: (id) => { S.sheetArg = id; refreshSheet(); },
     ddPick: (v, el) => {
@@ -1512,9 +1546,18 @@
   function endSplash() {
     spT.forEach(clearTimeout); spT = [];
     const sp = $("#splash"); if (!sp) return;
-    sp.classList.add("out");
-    S.screen = "login"; render(true);
-    spT.push(setTimeout(() => { $("#splashHost").innerHTML = ""; }, 700));
+    const logo = sp.querySelector(".sp-logo");
+    S.screen = "login"; render();
+    const lg = $(".login"), mark = lg && lg.querySelector(".lg-mark");
+    const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!logo || !mark || still || !logo.animate) { sp.classList.add("out"); spT.push(setTimeout(() => { $("#splashHost").innerHTML = ""; }, 700)); return; }
+    lg.classList.add("from-splash"); mark.style.visibility = "hidden";
+    // the splash svg pads its 1200-wide artwork by 40 units each side; land that artwork exactly on the sign-in mark
+    const a = logo.getBoundingClientRect(), b = mark.getBoundingClientRect(), f = a.width / (parseFloat(getComputedStyle(logo).width) || a.width);
+    const s = b.width / 1200, k = (1280 * s) / a.width, dx = (b.left - 40 * s - a.left) / f, dy = (b.top - 40 * s - a.top) / f;
+    logo.style.transformOrigin = "0 0"; sp.classList.add("morph");
+    const anim = logo.animate([{ transform: "none" }, { transform: `translate(${dx}px, ${dy}px) scale(${k})` }], { duration: 780, easing: "cubic-bezier(.65, 0, .2, 1)", fill: "forwards" });
+    anim.onfinish = () => { mark.style.visibility = ""; $("#splashHost").innerHTML = ""; setTimeout(() => lg.classList.remove("from-splash"), 900); };
   }
   ACT.skipSplash = endSplash;
 
