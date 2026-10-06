@@ -4,7 +4,7 @@ const path = require("path");
 const here = __dirname, src = (f) => fs.readFileSync(path.join(here, "src", f), "utf8"), vendor = (f) => fs.readFileSync(path.join(here, "vendor", f), "utf8");
 
 const out = src("shell.html")
-  .replace("/*@CSS@*/", () => src("app.css"))
+  .replace("/*@CSS@*/", () => src("app.css").replace("@LOGIN_BG@", "data:image/jpeg;base64," + fs.readFileSync(path.join(here, "src", "login-bg.jpg")).toString("base64")))
   .replace("<!--@LOGO@-->", () => src("logo-symbols.svg"))
   // labels: the dashboard's own dictionary wins; the app dictionary only fills keys it lacks
   .replace("/*@I18N@*/", () => vendor("i18n-dashboard.js") +

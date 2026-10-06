@@ -14,6 +14,7 @@ Open `index.html` in a browser. It is one self-contained page (no server needed)
 - `src/app.css` — design tokens and styles
 - `src/shell.html` — page shell (phone frame + side panel)
 - `src/logo-symbols.svg` — logo layers used by the splash animation
+- `src/login-bg.jpg` — sign-in background photo (Unsplash, @artrachen, free licence), embedded at build time
 - `vendor/` — labels from the dashboard (`i18n-dashboard.js`), app labels (`i18n-app.js`) and sample data (`data.js`)
 
 ```bash

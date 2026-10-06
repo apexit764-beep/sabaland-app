@@ -355,10 +355,9 @@
   /* ---------- state ---------- */
   const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", ntOn: true, qrCat: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
   const TABS = ["overview", "conversations", "contacts", "more"];
-  const SUBS = ["segments", "replies", "campaigns", "reports", "ai-settings", "team", "account", "profile", "help", "set-appearance", "set-notifs", "set-security", "set-lang", "set-tags", "set-cats", "reply-cats"];
+  const SUBS = ["segments", "replies", "campaigns", "reports", "ai-settings", "team", "account", "profile", "set-appearance", "set-notifs", "set-security", "set-lang", "set-tags", "set-cats", "reply-cats"];
   // screens whose "add" action is a floating button: sheet to open + its label
   const FABS = { conversations: ["newConv", "newConv"], contacts: ["contactForm", "addContact"], replies: ["replyForm", "addReply"], campaigns: ["campForm", "addCamp"], team: ["memberForm", "addMember"], segments: ["segForm", "segNew"], "set-tags": ["tagForm", "addConvTag"], "reply-cats": ["catForm", "catNew"], "set-cats": () => CAT_TABS.find((x) => x[0] === S.catTab)[4] };
-  const SUPPORT = { wa: "+968 9000 1234", mail: "support@sabalandqa.com" }; // placeholders until the real support contacts are known
 
   /* ---------- screens ---------- */
   const SCR = {};
@@ -704,21 +703,7 @@
     </div>`;
   SETTINGS.forEach(([id, k]) => { SCR["set-" + id] = () => `<div class="scroller">${subHdr(T(k))}${accPanels()[id]}</div>`; });
 
-  const APP_VERSION = "1.0.0"; // shown on the splash and in Help
-  const FAQ = [["faq1q", "faq1a"], ["faq2q", "faq2a"], ["faq3q", "faq3a"], ["faq4q", "faq4a"], ["faq5q", "faq5a"]];
-  SCR.help = () => `<div class="scroller">${subHdr(T("helpTitle"))}
-      <div class="sec-h" style="margin-top:4px"><h3>${T("faqTitle")}</h3></div>
-      <div class="list surf faq">${FAQ.map(([q, a]) => `<details class="row"><summary><span class="rn">${T(q)}</span>${ic("chevD")}</summary><p>${T(a)}</p></details>`).join("")}</div>
-      <div class="sec"><div class="sec-h"><h3>${T("contactUs")}</h3></div><div class="list surf">
-        <div class="row"><span class="mi c-g">${ic("whatsapp")}</span><span class="rb"><span class="rn">${T("supportWa")}</span><span class="rs" dir="ltr" style="text-align:${LANG === "ar" ? "right" : "left"}">${SUPPORT.wa}</span></span><button class="ibtn sm" data-act="copyText" data-arg="${SUPPORT.wa}" aria-label="${T("copy")}">${ic("copy")}</button></div>
-        <div class="row"><span class="mi c-b">${ic("send")}</span><span class="rb"><span class="rn">${T("supportMail")}</span><span class="rs" dir="ltr" style="text-align:${LANG === "ar" ? "right" : "left"}">${SUPPORT.mail}</span></span><button class="ibtn sm" data-act="copyText" data-arg="${SUPPORT.mail}" aria-label="${T("copy")}">${ic("copy")}</button></div>
-        <div class="row"><span class="mi c-o">${ic("clock")}</span><span class="rb"><span class="rn">${T("supportHours")}</span><span class="rs">${T("supportHoursV")}</span></span></div></div></div>
-      <div class="sec"><div class="card surf">${cardT("alert", T("reportTitle"))}<p class="card-d">${T("reportSub")}</p>
-        <div class="fld"><label for="hpTopic">${T("reportTopic")}</label><select id="hpTopic" class="sel">${["rtChat", "rtAi", "rtNumber", "rtOther"].map((k) => `<option>${T(k)}</option>`).join("")}</select></div>
-        <div class="fld"><label for="hpMsg">${T("reportMsg")}</label><textarea id="hpMsg" class="ta" rows="4" placeholder="${T("reportMsgPh")}"></textarea></div>
-        <button class="btn btn-p btn-blk" data-act="sendReport">${ic("send")}${T("reportSend")}</button></div></div>
-    </div>`;
-
+  const APP_VERSION = "1.0.0"; // shown on the splash and at the bottom of "More"
   SCR.more = () => {
     const item = (go, icn, cls, key) => `<button class="row" data-act="go" data-arg="${go}"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(key)}</span></span><span class="chev">${ic("chevE")}</span></button>`;
     return `<div class="scroller">
@@ -730,8 +715,7 @@
         ${item("reports", "reports", "c-b", "navReports")}</div></div>
       <div class="sec"><div class="sec-h"><h3>${T("grpAcct")}</h3></div><div class="list surf">
         ${item("team", "users", "c-b", "navTeam")}
-        ${item("account", "settings", "c-g", "navSettings")}
-        ${item("help", "info", "c-o", "helpTitle")}</div></div>
+        ${item("account", "settings", "c-g", "navSettings")}</div></div>
       <div class="sec"><button class="btn btn-d btn-blk" data-act="logout">${ic("logout")}${T("logout")}</button></div>
       <p class="app-ver">${T("brandName")} · ${T("version")} <span class="num" dir="ltr">${APP_VERSION}</span></p>
     </div>`;
@@ -822,10 +806,16 @@
 
   const contCount = () => DATA.contacts.filter((k) => (S.fTag === "all" || k.tag === S.fTag) && (S.fLang === "all" || k.lang === S.fLang)).length;
   SH.contFilter = () => shHead(T("fltTitle")) + `<div class="sh-b">
-    <div class="sec-h"><h3>${T("fltTag")}</h3><button class="lnk" data-act="fltManage">${T("fltManage")}</button></div>
-    <div class="chips flt-chips">${[{ id: "all" }].concat(DATA.tags).map((t) => `<button class="chip ${S.fTag === t.id ? "on" : "surf"}" data-act="fltSet" data-arg="fTag:${t.id}">${t.id === "all" ? T("fltAll") : esc(L(t))}<span class="cnt">${t.id === "all" ? DATA.contacts.length : DATA.contacts.filter((k) => k.tag === t.id).length}</span></button>`).join("")}</div>
-    <div class="sec-h" style="margin-top:16px"><h3>${T("fltLang")}</h3></div>
-    <div class="chips flt-chips">${["all", "ar", "en", "hi"].map((l) => `<button class="chip ${S.fLang === l ? "on" : "surf"}" data-act="fltSet" data-arg="fLang:${l}">${l === "all" ? T("fltAll") : langLabel(l)}</button>`).join("")}</div></div>
+    ${(() => { const opts = [{ id: "all" }].concat(DATA.tags), cnt = (t) => (t.id === "all" ? DATA.contacts.length : DATA.contacts.filter((k) => k.tag === t.id).length);
+      const row = (t) => `<span class="mi ${t.id === "all" ? "c-m" : "seg-dot"}" ${t.id === "all" ? "" : `style="--c:var(--${tagVar(t.color)})"`}>${ic(t.id === "all" ? "users" : "tag")}</span><span class="ob"><strong>${t.id === "all" ? T("fltAll") : esc(L(t))}</strong><span>${cnt(t)} ${T("segCount")}</span></span>`;
+      const cur = opts.find((t) => t.id === S.fTag) || opts[0];
+      return `<div class="fld"><label for="cfTag" class="lbl-row">${T("fltTag")}<button type="button" class="lnk-add" data-act="fltManage">${T("fltManage")}</button></label><div class="dd">
+        <button type="button" class="sel dd-btn has" id="cfTag" data-act="ddToggle" aria-haspopup="listbox" aria-expanded="false"><span class="dd-cur">${row(cur)}</span>${ic("chevD")}</button>
+        <div class="dd-panel surf" hidden><div class="search dd-search">${ic("search")}<input id="ddQ" type="search" placeholder="${T("search")}" aria-label="${T("search")}" autocomplete="off"><button type="button" class="dd-x" data-act="ddClose" aria-label="${T("cancel")}">${ic("chevD")}</button></div>
+          <div class="dd-list" role="listbox">${opts.map((t) => `<button type="button" class="opt${S.fTag === t.id ? " on" : ""}" role="option" data-act="fltSet" data-arg="fTag:${t.id}" data-q="${esc((t.id === "all" ? T("fltAll") : t.ar + " " + t.en).toLowerCase().replace(/s/g, ""))}">${row(t)}${S.fTag === t.id ? `<span style="color:var(--accent)">${ic("check")}</span>` : ""}</button>`).join("")}
+            <p class="hint dd-empty" hidden>${T("ddEmpty")}</p></div></div></div></div>`; })()}
+    <div class="fld"><label>${T("fltLang")}</label>
+    <div class="chips flt-chips">${["all", "ar", "en", "hi"].map((l) => `<button class="chip ${S.fLang === l ? "on" : "surf"}" data-act="fltSet" data-arg="fLang:${l}">${l === "all" ? T("fltAll") : langLabel(l)}</button>`).join("")}</div></div></div>
     <div class="sh-f"><button class="btn btn-g surf" data-act="fltSet" data-arg="reset">${T("fltReset")}</button><button class="btn btn-p" data-act="closeSheet">${T("fltShow")} (${contCount()})</button></div>`;
   SH.numSwitch = () => shHead(T("numSwitchTitle")) + `<div class="sh-b" style="padding-bottom:22px">
     ${opt("pickNum", "all", "whatsapp", "c-g", T("allNumbers"), `<span dir="ltr">${DATA.numbers.main.phone} · ${DATA.numbers.second.phone}</span>`, S.num === "all")}
@@ -1128,7 +1118,6 @@
     cust: { cuTag: {}, cuSeg: {}, cuNote: { max: 5000 } },
     profile: { pName: { req: 1, max: 255 }, pMail: { req: 1, type: "email", max: 255 }, pPh: { req: 1 } },
     security: { pCur: { req: 1 }, pNew: { req: 1, min: 8, notSame: "pCur" }, pCon: { req: 1, match: "pNew" } },
-    report: { hpTopic: { req: 1 }, hpMsg: { req: 1, min: 10, max: 1000 } },
     ai: { aiKey: { max: 255 }, aiModel: { req: 1 }, aiTok: { req: 1, int: [1, 128000] }, aiDef: { req: 1 }, aiDia: { req: 1 }, aiPrompt: { cardLabel: 1 }, aiAgent: {}, aiForbid: { cardLabel: 1 }, acHours: { req: 1, int: [1, 168] } },
   };
   const FIELD = {};
@@ -1292,7 +1281,6 @@
     ntReadAll: () => { NOTIFS.forEach((n) => { n.unread = false; }); render(); toast("ntAllRead"); },
     back: () => go((S.screen === "segments" || S.screen === "set-cats") && S.prev === "contacts" ? "contacts" : ["segments", "set-tags", "reply-cats"].includes(S.screen) ? "set-cats" : S.screen === "notifications" ? S.tab : S.prev === "notifications" && S.screen !== "notifications" && !TABS.includes(S.screen) ? (S.prev = null, "notifications") : S.screen === "chat" ? "conversations" : S.screen.startsWith("set-") ? "account" : SUBS.includes(S.screen) ? "more" : S.tab),
     copyText: (v) => { const done = () => toast("copied"); try { navigator.clipboard.writeText(v).then(done, done); } catch (e) { done(); } },
-    sendReport: () => { if (!validate("report")) return; const m = $("#hpMsg"); m.value = ""; delete m.dataset.vt; m.dispatchEvent(new Event("input", { bubbles: true })); toast("reportSent"); },
     openChat: (id) => { S.chat = id; const c = getConv(id); if (c) c.unread = 0; go("chat"); },
     chatWith: (id) => { const k = DATA.contacts.find((x) => x.id === id); const c = DATA.conversations.find((x) => x.phone === k.ph); if (c) ACT.openChat(c.id); else { closeSheet(); toast("toastSent"); } },
     filter: (f) => { S.filter = f; render(); },
