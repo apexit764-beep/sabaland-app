@@ -230,7 +230,7 @@ svg.i { width: 20px; height: 20px; flex: none; display: block; }
 /* buttons */
 .btn { height: 50px; padding: 0 20px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: 15px; transition: transform .15s, filter .15s; white-space: nowrap; }
 .btn svg.i { width: 18px; height: 18px; }
-.btn-p { background: var(--cta-bg); color: var(--cta-fg); box-shadow: 0 12px 26px -10px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, .25); }
+.btn-p { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: var(--on-gold); box-shadow: 0 12px 26px -10px rgba(224, 87, 30, .55), inset 0 1px 0 rgba(255, 255, 255, .3); }
 .btn-o { background: linear-gradient(135deg, var(--orange), var(--orange-2)); color: var(--on-gold); box-shadow: 0 12px 26px -10px rgba(224, 87, 30, .6), inset 0 1px 0 rgba(255, 255, 255, .35); }
 .btn-g { color: var(--ink); }
 .btn-d { background: var(--t-r); color: var(--red); }
@@ -302,7 +302,6 @@ svg.i { width: 20px; height: 20px; flex: none; display: block; }
 .req { color: var(--accent); font-weight: 700; margin-inline-start: 3px; }
 .opt-tag { font-size: 10.5px; font-weight: 500; color: var(--ink-3); background: var(--hair); border-radius: 6px; padding: 1px 6px; margin-inline-start: 6px; vertical-align: 1px; }
 .card-t h4 .opt-tag { font-size: 10px; }
-.req-note { font-size: 11.5px; color: var(--ink-3); margin: 0 0 12px; }
 .fmeta { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-top: -2px; }
 .fmeta:not(:has(.cnt)):has(.ferr[hidden]) { display: none; }
 .ferr { display: flex; align-items: flex-start; gap: 5px; font-size: 12px; color: var(--red); line-height: 1.45; }
@@ -812,6 +811,149 @@ fieldset.locked { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }
 .cat-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
 .cat-tabs button { flex: 1; height: 38px; border-radius: 12px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); transition: background .2s, color .2s; }
 .cat-tabs button.on { background: var(--t-o); color: var(--accent); }
+/* chat app bar: solid, flush with the top, identity row + slim tool row */
+.chat-bar { position: relative; z-index: 3; padding: 50px 10px 10px; background: var(--surface); border-bottom: 1px solid var(--line); border-radius: 0 0 24px 24px; box-shadow: 0 10px 30px -22px var(--shadow); }
+.cb-row { display: flex; align-items: center; gap: 4px; }
+.cb-row .ibtn { flex: none; }
+.chat-bar .who { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; text-align: start; padding: 4px; border-radius: 16px; }
+.chat-bar .who:active { background: var(--t-m); }
+.who-t { min-width: 0; display: grid; gap: 1px; }
+.who-t strong { display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.who-t .sub { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--ink-3); white-space: nowrap; }
+.who-t .sub i { font-style: normal; opacity: .6; }
+.who-t .sub .on { color: var(--leaf); font-weight: 600; }
+.who-t .ndot { width: 6px; height: 6px; }
+.cb-tools { display: flex; align-items: center; gap: 6px; margin: 8px -10px 0; padding: 8px 10px 0; border-top: 1px solid var(--hair); overflow-x: auto; scrollbar-width: none; }
+.cb-tools::-webkit-scrollbar { display: none; }
+.cb-tools .pill { height: 34px; }
+.tag-pill { cursor: default; pointer-events: none; }
+.qr-cats { margin-bottom: 12px; flex-wrap: nowrap; }
+.qr-cats .chip { flex: none; }
+/* sub-page header: title with its one-line description underneath */
+.sub-hdr .sh-tt { flex: 1; min-width: 0; }
+.sub-hdr .sh-tt h2 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+.sub-hdr .sh-tt p { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; line-height: 1.5; }
+/* chip carousels run to the screen edge instead of stopping at the page padding */
+.qr-cats { margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
+/* sheet bodies scroll without a visible scrollbar, so the form keeps its full width */
+.sh-b { scrollbar-width: none; }
+.sh-b::-webkit-scrollbar { display: none; }
+/* quick-reply picker: search + category chips stay fixed above the scrolling list */
+.qr-top { padding: 0 20px 8px; flex: none; }
+.qr-top .search { margin-bottom: 8px; }
+.qr-top .qr-cats { margin-inline: -20px; padding-inline: 20px; scroll-padding-inline: 20px; margin-bottom: 0; }
+/* customer sheet layout */
+.cust-hero { display: flex; align-items: center; gap: 12px; padding: 12px 20px 14px; border-bottom: 1px solid var(--hair); margin-bottom: 12px; flex: none; }
+.cust-hero .av.lg { width: 56px; height: 56px; font-size: 20px; flex: none; }
+.cust-hero .ch-t { flex: 1; min-width: 0; }
+.cust-hero h3 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+.cust-hero p { font-size: 12.5px; color: var(--ink-3); text-align: start; margin-top: 1px; }
+.cust-hero .ch-b { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+.cust-hero > .ibtn { align-self: flex-start; }
+.lbl-row { display: flex; align-items: center; gap: 6px; }
+.lnk-add { margin-inline-start: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 12.5px; font-weight: 600; color: var(--accent); padding: 2px 0; }
+.lnk-add svg.i { width: 14px; height: 14px; }
+.cust-info { padding: 4px 14px; margin: 2px 0 14px; box-shadow: none; }
+.cust-hist { margin-bottom: 6px; }
+[dir="rtl"] .cust-hero p { text-align: right; } [dir="ltr"] .cust-hero p { text-align: left; }
+.cat-chips2 { margin-bottom: 10px; }
+/* notifications master switch */
+.nt-master .tgl { border: 0; padding: 4px 0; }
+.nt-master .tgl > span { display: grid; gap: 2px; }
+.nt-master strong { font-size: 15px; font-weight: 700; }
+.nt-master small { font-size: 12px; color: var(--ink-3); font-weight: 400; }
+.nt-rest { transition: opacity .2s; }
+.nt-rest.is-off { opacity: .45; pointer-events: none; filter: grayscale(.6); }
+.nt-master { margin-bottom: 22px; }
+.nt-sec { margin: 0 4px 10px; }
+.nt-rest .card + .card { margin-top: 12px; }
+/* small purple sparkle beside the customer name while the AI assistant is on */
+.ai-mark { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--t-ai); color: var(--ai); flex: none; }
+.ai-mark svg.i { width: 12px; height: 12px; }
+/* AI mark beside the customer name: soft pulsing halo + twinkling sparkle */
+.ai-mark { position: relative; overflow: visible; background: linear-gradient(135deg, color-mix(in srgb, var(--ai) 22%, transparent), color-mix(in srgb, var(--ai) 10%, transparent)); }
+.ai-mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--ai); opacity: 0; animation: aiHalo 2.4s cubic-bezier(.2, .7, .3, 1) infinite; }
+.ai-mark svg.i { animation: aiTwinkle 2.4s ease-in-out infinite; transform-origin: 50% 50%; }
+@keyframes aiHalo { 0% { transform: scale(.8); opacity: .7; } 70%, 100% { transform: scale(1.9); opacity: 0; } }
+@keyframes aiTwinkle { 0%, 100% { transform: scale(1) rotate(0); } 15% { transform: scale(1.25) rotate(18deg); } 30% { transform: scale(.95) rotate(-6deg); } 45% { transform: scale(1) rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .ai-mark::before, .ai-mark svg.i { animation: none; } }
+.ai-mark { width: 22px; height: 22px; } .ai-mark svg.i { width: 13px; height: 13px; }
+.ai-mark::before { border-width: 2px; }
+/* action sheets: one grouped list with dividers */
+.acts { border-radius: 20px; overflow: hidden; box-shadow: none; }
+.acts .act-it { border-radius: 0; border: 0; padding: 12px 14px; gap: 12px; position: relative; }
+.acts .act-it + .act-it::before { content: ""; position: absolute; top: 0; inset-inline-start: 62px; inset-inline-end: 14px; height: 1px; background: var(--hair); }
+.acts .act-it + .act-it { margin-top: 0; }
+.acts .act-it .mi { width: 36px; height: 36px; border-radius: 11px; }
+.acts .act-it .chev { color: var(--ink-3); display: grid; }
+.acts .act-it .chev svg.i { width: 16px; height: 16px; }
+.acts .act-it:active { background: var(--t-m); }
+.acts .act-it.danger strong { color: var(--red); }
+/* each action is its own card */
+.acts { display: grid; gap: 8px; border-radius: 0; overflow: visible; }
+.acts .act-it { border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(40, 14, 12, .04); }
+.acts .act-it + .act-it::before { display: none; }
+/* actions two per row: shorter sheet, everything within thumb reach */
+.acts { grid-template-columns: 1fr 1fr; }
+.acts .act-it { flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; padding: 12px; min-height: 92px; }
+.acts .act-it .ob { width: 100%; }
+.acts .act-it strong { font-size: 13.5px; line-height: 1.4; white-space: normal; }
+.acts .act-it .chev { display: none; }
+.acts .act-it:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; align-items: center; min-height: 0; }
+.hist-card { padding: 10px 12px; box-shadow: none; }
+.hist-card .mi { width: 34px; height: 34px; border-radius: 11px; }
+.rep-range { display: flex; margin: -2px 0 12px; }
+.rep-range { justify-content: flex-start; } .rep-range .chip { margin: 0; }
+/* report period: full-width selector above the cards */
+.rep-range .chip { width: 100%; height: 46px !important; border-radius: 16px; padding: 0 14px; font-size: 14px; gap: 8px; }
+.rep-range .chip > svg.i:last-child { margin-inline-start: auto; color: var(--ink-3); }
+/* period sheet: one card per period with its date span */
+.rng-list { display: grid; gap: 8px; }
+.rng-it { display: flex; align-items: center; gap: 10px; width: 100%; text-align: start; padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line); box-shadow: none; }
+.rng-it .rb { flex: 1; min-width: 0; display: grid; gap: 3px; }
+.rng-it strong { font-size: 15px; font-weight: 700; }
+.rng-it .rb span { font-size: 12.5px; color: var(--ink-3); }
+.rng-it.on { border-color: var(--accent); }
+.rng-ck { color: var(--accent); display: grid; } .rng-ck svg.i { width: 20px; height: 20px; }
+.rng-it.custom { background: var(--t-o); border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
+.rng-it.custom strong, .rng-it.custom .rb span { color: var(--accent); }
+.rng-it:active { transform: scale(.985); }
+/* carousels: clipped at the page padding on the start side, run to the screen edge only on the end side */
+.qr-cats { margin-inline: 0 -16px; padding-inline: 0 16px; scroll-padding-inline: 0 16px; }
+.qr-top .qr-cats { margin-inline: 0 -20px; padding-inline: 0 20px; scroll-padding-inline: 0 20px; }
+/* permissions sheet: back · title · close, member card, two-per-row grid */
+.perm-h { align-items: center; }
+.perm-h .sh-t { text-align: start; }
+.perm-who { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 16px; box-shadow: none; margin-bottom: 8px; }
+.perm-who .av { width: 40px; height: 40px; font-size: 15px; flex: none; }
+.perm-who .rb { flex: 1; min-width: 0; display: grid; }
+.perm-who strong { font-size: 14.5px; }
+.perm-who .rb span { font-size: 12px; color: var(--ink-3); text-align: start; }
+[dir="rtl"] .perm-who .rb span { text-align: right; }
+.perm-sub { margin: 0 2px 10px; font-size: 12.5px; }
+.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.perm-grid .perm { padding: 8px; gap: 8px; min-width: 0; }
+.perm-grid .perm + .perm { margin-top: 0; }
+.perm-grid .perm .pi { width: 30px; height: 30px; border-radius: 10px; flex: none; }
+.perm-grid .perm .pi svg.i { width: 16px; height: 16px; }
+.perm-grid .perm .pn { font-size: 12.5px; line-height: 1.35; min-width: 0; }
+.perm-grid .perm .pc { width: 20px; height: 20px; border-radius: 7px; flex: none; }
+.perm-grid .perm .pc svg.i { width: 13px; height: 13px; }
+.perm-grid .perm:last-child:nth-child(odd) { grid-column: 1 / -1; }
+/* attachment box */
+.file-hidden { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.filebox { position: relative; }
+.fb-drop, .fb-file { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--field); }
+.fb-drop { border: 1.5px dashed color-mix(in srgb, var(--accent) 45%, var(--line)); cursor: pointer; transition: background .15s, border-color .15s; }
+.fb-drop:hover, .filebox:focus-within .fb-drop { border-color: var(--accent); background: var(--t-o); }
+.fb-file { border: 1px solid var(--line); background: var(--surface); }
+.fb-ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--t-o); color: var(--accent); flex: none; }
+.fb-ic svg.i { width: 20px; height: 20px; }
+.fb-t { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.fb-t strong { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fb-drop .fb-t strong { color: var(--accent); }
+.fb-t small { font-size: 11.5px; color: var(--ink-3); }
+.filebox.invalid .fb-drop, .filebox.invalid .fb-file { border-color: var(--red); }
 
 </style>
 </head>
@@ -2054,12 +2196,12 @@ window.DATA = {
     ["aiAutoCloseUseAi", "رسالة إغلاق ذكية (AI)", "Smart closing message (AI)"], ["aiAutoCloseMsg", "رسالة الإغلاق", "Closing message"],
     ["aiAutoCloseSteps", "الخطوة 1: إرسال رسالة إغلاق — الخطوة 2: إغلاق المحادثة إذا لم يرد العميل بعد نفس المدة.", "Step 1: send a closing message — Step 2: close the chat if the customer still doesn't reply after the same time."],
     ["defaultLang", "اللغة الافتراضية", "Default language"], ["defaultLangHint", "تُستخدم عندما تكون لغة العميل معطّلة أو غير واضحة.", "Used when the customer's language is turned off or unclear."],
-    ["rngApply", "تطبيق", "Apply"], ["rngTitle", "الفترة", "Period"],
+    ["rngApply", "تطبيق", "Apply"], ["rngTitle", "الفترة الزمنية", "Time period"], ["rngCustomHint", "اختر يومين من التقويم", "Pick two days on the calendar"],
     ["vReqMsgOrFile", "اكتب نص الرسالة أو أضف مرفقاً", "Write a message or add an attachment"], ["vFileBig", "الحد الأقصى لحجم الملف 16 ميجا", "Files can be up to 16 MB"],
     ["vFileType", "نوع الملف غير مدعوم", "This file type isn't supported"], ["vDupPhoneMember", "هذا الرقم مستخدم لموظف آخر", "Another team member uses this number"],
     ["voiceSend", "إرسال", "Send"], ["voiceCancel", "إلغاء", "Cancel"], ["voiceNote", "رسالة صوتية", "Voice message"],
     ["ntNewMsg2", "رسالة جديدة", "New message"], ["ntNewContact", "جهة اتصال جديدة", "New contact"], ["ntCampaigns", "الحملات التسويقية", "Marketing campaigns"], ["ntReplies", "تعديلات الردود السريعة", "Quick reply changes"],
-    ["optional", "اختياري", "Optional"], ["catTabSeg", "العملاء", "Customers"], ["catTabTags", "المحادثات", "Conversations"], ["catTabRc", "الردود", "Replies"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
+    ["optional", "اختياري", "Optional"], ["fbPick", "اختر ملفاً للإرفاق", "Choose a file to attach"], ["fbTypes", "صورة، PDF، مستند، فيديو أو صوت · حتى 16 ميجا", "Image, PDF, document, video or audio · up to 16 MB"], ["fbRemove", "إزالة الملف", "Remove file"], ["repSubShort", "تحليلات المحادثات والمساعد والفريق", "Chats, AI and team insights"], ["repliesSubShort", "ردود جاهزة للفريق والمساعد الذكي", "Ready replies for your team and AI"], ["ntMasterT", "تفعيل الإشعارات", "Turn on notifications"], ["ntMasterD", "عند الإيقاف لن تصلك أي إشعارات على هذا الجهاز", "When off, this device won't get any notifications"], ["catTabSeg", "تصنيفات العملاء", "Customer segments"], ["catTabTags", "وسوم المحادثات", "Conversation tags"], ["catTabRc", "فئات الردود", "Reply categories"], ["catsMgmt", "إدارة التصنيفات", "Categories"], ["catsMgmtSub", "كل التصنيفات والوسوم والفئات في مكان واحد", "All tags, segments and categories in one place"],
     ["unitSeg", "تصنيفات", "segments"], ["unitTag", "وسوم", "tags"], ["unitCat", "فئات", "categories"], ["replyCatSub", "فئات لترتيب الردود السريعة — تظهر عند إضافة رد أو اختياره", "Groups for quick replies — shown when adding or picking a reply"], ["mRoleLbl", "الدور", "Role"], ["mAddedLbl", "تاريخ الإضافة", "Date added"], ["mStaff", "موظف", "Staff"], ["ddAgentPh", "اختر موظفاً", "Choose a team member"], ["ddContactPh", "اختر جهة اتصال", "Choose a contact"], ["ddNone", "بدون — سأدخل رقماً جديداً", "None — I'll enter a new number"], ["ddEmpty", "لا توجد نتائج", "No matches"], ["fltTitle", "تصفية جهات الاتصال", "Filter contacts"], ["fltReset", "إعادة تعيين", "Reset"],
     ["fltShow", "عرض النتائج", "Show results"], ["fltTag", "التصنيف", "Tag"], ["fltLang", "اللغة", "Language"], ["fltAll", "الكل", "All"], ["fltManage", "إدارة التصنيفات", "Manage tags"], ["pCreds", "بيانات الدخول التجريبية", "Demo sign-in details"], ["pFill", "تعبئة الحقول", "Fill in the fields"], ["toastCampSending", "بدأ إرسال الحملة على دفعات", "Campaign started sending in chunks"],
     ["msgLocation", "الموقع", "Location"], ["msgPhoto", "صورة", "Photo"], ["msgEditExpired", "انتهت مدة التعديل (15 دقيقة)", "The 15-minute edit window has passed"], ["reqNote", "الحقول المعلّمة بـ * إلزامية", "Fields marked * are required"],
@@ -2158,6 +2300,7 @@ window.DATA = {
     up: P("M22 7 13.5 15.5 8.5 10.5 2 17|M16 7h6v6"),
     down: P("M22 17 13.5 8.5 8.5 13.5 2 7|M16 17h6v-6"),
     more: C(12, 12, 1) + C(19, 12, 1) + C(5, 12, 1),
+    moreV: C(12, 5, 1) + C(12, 12, 1) + C(12, 19, 1),
     pen: P("M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"),
     copy: RC(8, 8, 14, 14, 2) + P("M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"),
     trash: P("M3 6h18|M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6|M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"),
@@ -2198,6 +2341,8 @@ window.DATA = {
     pin: P("M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z") + C(12, 10, 3),
     sliders: P("M4 6h10|M18 6h2|M4 12h4|M12 12h8|M4 18h12|M20 18h0") + C(16, 6, 2) + C(10, 12, 2) + C(18, 18, 2),
     mail: RC(2, 4, 20, 16, 2) + P("m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"),
+    calendar: RC(3, 4, 18, 18, 2) + P("M16 2v4|M8 2v4|M3 10h18"),
+    bolt: P("M13 2 3 14h9l-1 8 10-12h-9l1-8z"),
     inbox: P("M22 12h-6l-2 3h-4l-2-3H2|M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"),
   };
   const FLIP = { chevE: 1, back: 1, send: 1, reply: 1 };
@@ -2346,7 +2491,7 @@ window.DATA = {
   const dist = (label, pct, color) => `<div class="dist"><div class="dt"><span>${esc(label)}</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%;background:${color}"></i></div></div>`;
 
   /* ---------- state ---------- */
-  const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
+  const S = { screen: "splash", tab: "overview", chat: null, filter: "all", num: "all", q: "", cq: "", fTag: "all", fLang: "all", fNum: "all", ntOn: true, qrCat: "all", catTab: "seg", range: "repPeriodCurrentMonth", fp: { step: 1, via: "email", id: "info@sabalandqa.com" }, sheet: null, sheetArg: null, confirm: null, from: "more" };
   const TABS = ["overview", "conversations", "contacts", "more"];
   const SUBS = ["segments", "replies", "campaigns", "reports", "ai-settings", "team", "account", "profile", "help", "set-appearance", "set-notifs", "set-security", "set-lang", "set-tags", "set-cats", "reply-cats"];
   // screens whose "add" action is a floating button: sheet to open + its label
@@ -2356,7 +2501,7 @@ window.DATA = {
   /* ---------- screens ---------- */
   const SCR = {};
   const hdr = (title, sub, right) => `<div class="hdr"><div class="ttl"><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}</div>${right || ""}</div>`;
-  const subHdr = (title, right) => `<div class="sub-hdr"><button class="ibtn surf" data-act="back" aria-label="back">${ic("back")}</button><h2>${title}</h2>${right || ""}</div>`;
+  const subHdr = (title, right, sub) => `<div class="sub-hdr"><button class="ibtn surf" data-act="back" aria-label="back">${ic("back")}</button><div class="sh-tt"><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}</div>${right || ""}</div>`;
   const cardT = (icon, title, extra) => `<div class="card-t"><span class="ci">${ic(icon)}</span><h4>${title}</h4>${extra || ""}</div>`;
   // stat tile: icon + trend on top, big figure, label. `acc` = the one orange tile per grid.
   const stat = (icn, cls, val, label, tr, acc) => `<div class="st ${acc ? "acc" : "surf"}"><div class="st-top"><span class="ti ${acc ? "" : cls}">${ic(icn)}</span>${tr || ""}</div><div class="st-v">${val}</div><div class="st-l">${label}</div></div>`;
@@ -2368,7 +2513,7 @@ window.DATA = {
     { id: "n3", icon: "chat", cls: "c-o", day: "today", unread: true, go: ["chat", "c2"], t: { ar: "محادثة جديدة: بريا شارما", en: "New conversation: Priya Sharma" }, s: { ar: "الرقم الإضافي", en: "Second number" }, tm: { ar: "منذ 30 د", en: "30 min ago" } },
     { id: "n4", icon: "users", cls: "c-ai", day: "today", unread: false, go: ["contacts"], t: { ar: "جهة اتصال جديدة: أحمد حسن", en: "New contact: Ahmed Hassan" }, s: { ar: "أُضيفت تلقائياً من واتساب", en: "Added automatically from WhatsApp" }, tm: { ar: "منذ ساعتين", en: "2 h ago" } },
     { id: "n5", icon: "campaign", cls: "c-o", day: "yesterday", unread: false, go: ["campaigns"], t: { ar: "جاري إرسال الحملة «عرض عسل السدر — الخريف»", en: "Sending campaign “Sidr honey — autumn offer”" }, s: { ar: "كل العملاء · الرقم الرئيسي", en: "All customers · main number" }, tm: { ar: "أمس 8:30 م", en: "Yesterday 8:30 PM" } },
-    { id: "n6", icon: "reply", cls: "c-m", day: "yesterday", unread: false, go: ["replies"], t: { ar: "تم تعديل رد سريع: أسعار العسل", en: "Quick reply updated: Honey prices" }, s: { ar: "بواسطة مريم السيابية", en: "By Mariam Al Siyabi" }, tm: { ar: "أمس 4:10 م", en: "Yesterday 4:10 PM" } },
+    { id: "n6", icon: "bolt", cls: "c-m", day: "yesterday", unread: false, go: ["replies"], t: { ar: "تم تعديل رد سريع: أسعار العسل", en: "Quick reply updated: Honey prices" }, s: { ar: "بواسطة مريم السيابية", en: "By Mariam Al Siyabi" }, tm: { ar: "أمس 4:10 م", en: "Yesterday 4:10 PM" } },
   ];
   const ntUnread = () => NOTIFS.filter((n) => n.unread).length;
   const bellBtn = () => { const n = ntUnread(); return `<button class="ibtn surf bell${n ? " has" : ""}" data-act="go" data-arg="notifications" aria-label="${T("ntTitle")}${n ? " · " + n + " " + T("unreadN") : ""}">${ic("bell")}${n ? `<span class="bdg num">${n}</span>` : ""}</button>`; };
@@ -2476,26 +2621,21 @@ window.DATA = {
     S.chat = c.id;
     const i = DATA.conversations.indexOf(c);
     return `<div class="chat">
-      <div class="chat-h surf">
-        <button class="ibtn sm" data-act="back" aria-label="back">${ic("back")}</button>
-        <button class="who" data-act="sheet" data-arg="cust">${av(convName(c), i, "sm", c.num)}
-          <span style="min-width:0"><strong>${esc(convName(c))} <span class="lang">${(c.lang || "ar").toUpperCase()}</span></strong>
-          <span class="sub"><span class="on">${T("online")}</span>·<span class="ndot ${c.num}" style="width:6px;height:6px"></span>${T(c.num === "main" ? "viaMain" : "viaSecond")}</span></span></button>
-        <button class="ibtn sm" data-act="sheet" data-arg="call" aria-label="${T("callBtn")}">${ic("phone")}</button>
-        <button class="ibtn sm" data-act="sheet" data-arg="cust" aria-label="${T("cpInfo")}">${ic("info")}</button>
-      </div>
-      <div class="chat-tools">
-        <button class="pill ${c.aiOn ? "ai-on" : "surf"}" data-act="aiToggle">${ic("sparkle")}${c.aiOn ? T("aiActive") : T("aiPaused")}</button>
-        <button class="pill surf" data-act="sheet" data-arg="transfer">${ic("transfer")}${T("transfer")}</button>
-        ${c.convTag ? `<button class="pill surf" data-act="sheet" data-arg="cust">${ic("tag")}${esc(L(ctagById(c.convTag)))}</button>` : ""}
-        ${c.closed ? "" : `<button class="pill surf" data-act="sheet" data-arg="closeChat">${ic("check2")}${T("closeChat")}</button>`}
-      </div>
+      <header class="chat-bar">
+        <div class="cb-row">
+          <button class="ibtn sm" data-act="back" aria-label="back">${ic("back")}</button>
+          <button class="who" data-act="sheet" data-arg="cust">${av(convName(c), i, "sm", c.num)}
+            <span class="who-t"><strong>${esc(convName(c))}${c.aiOn ? `<span class="ai-mark" title="${T("aiActive")}" aria-label="${T("aiActive")}">${ic("sparkle")}</span>` : ""}<span class="lang">${(c.lang || "ar").toUpperCase()}</span></strong>
+            <span class="sub"><span class="on">${T("online")}</span><i>·</i><span class="ndot ${c.num}"></span>${T(c.num === "main" ? "viaMain" : "viaSecond")}</span></span></button>
+          <button class="ibtn sm" data-act="sheet" data-arg="chatOpts" aria-label="${T("actions")}">${ic("moreV")}</button>
+        </div>
+      </header>
       <div class="msgs" id="msgs">${msgsHtml(c)}</div>
       ${c.closed ? `<div class="closed-bar surf"><span class="mi c-g">${ic("check2")}</span><div class="cb"><strong>${T("chatClosed")}</strong><span>${T("chatClosedDesc")}</span></div><button class="btn btn-p btn-sm" data-act="reopen">${ic("refresh")}${T("reopenChat")}</button></div>`
         : `<div class="attach-row" id="attachRow" hidden></div><input type="file" id="fileIn" hidden>
         <div class="composer surf">
         <button class="ibtn sm" data-act="attach" aria-label="${T("export")}">${ic("clip")}</button>
-        <button class="ibtn sm" data-act="sheet" data-arg="qr" aria-label="${T("quickReplies")}">${ic("reply")}</button>
+        <button class="ibtn sm" data-act="sheet" data-arg="qr" aria-label="${T("quickReplies")}">${ic("bolt")}</button>
         <textarea id="draft" rows="1" placeholder="${T("typeMsg")}" aria-label="${T("typeMsg")}"></textarea>
         <button class="ibtn sm" data-act="sheet" data-arg="emoji" aria-label="${T("emojis")}">${ic("smile")}</button>
         <button class="ibtn sm" data-act="voice" aria-label="${T("voiceBtn")}">${ic("mic")}</button>
@@ -2524,16 +2664,15 @@ window.DATA = {
       <div id="contList">${contactRows()}</div>
     </div>`;
 
-  SCR.segments = () => `<div class="scroller">${subHdr(T("contactTagsTitle"))}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("contactTagsSub")}</p>
+  SCR.segments = () => `<div class="scroller">${subHdr(T("contactTagsTitle"), "", T("contactTagsSub"))}
       ${segList()}
     </div>`;
 
   SCR.replies = () => `<div class="scroller">
-      ${subHdr(T("repliesTitle"))}
-      <p class="hint" style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("repliesSub")}</p>
-      <div class="clist">${DATA.quickReplies.map((q) => `<button class="row surf conv-card qr-card" data-act="sheet" data-arg="replyActs:${q.id}">
-        <span class="mi c-o">${ic("reply")}</span>
+      ${subHdr(T("repliesTitle"), "", T("repliesSubShort"))}
+      <div class="chips qr-cats" role="tablist">${[{ id: "all" }].concat(DATA.replyCats).map((c) => { const n = c.id === "all" ? DATA.quickReplies.length : DATA.quickReplies.filter((q) => q.cat === c.id).length; return `<button role="tab" aria-selected="${S.qrCat === c.id}" class="chip ${S.qrCat === c.id ? "on" : "surf"}" data-act="qrCat" data-arg="${c.id}">${c.id === "all" ? T("fltAll") : esc(L(c))}<span class="cnt">${n}</span></button>`; }).join("")}</div>
+      <div class="clist">${DATA.quickReplies.filter((q) => S.qrCat === "all" || q.cat === S.qrCat).map((q) => `<button class="row surf conv-card qr-card" data-act="sheet" data-arg="replyActs:${q.id}">
+        <span class="mi c-o">${ic("bolt")}</span>
         <span class="rb"><span class="r1"><span class="rn">${esc(L(q.title))}</span><span class="rt">${ic("chat").replace('class="i"', 'class="i" style="width:12px;height:12px"')}${q.used}</span></span>
           <span class="qr-body">${esc(L(q.body)).replace(/\{\{[^}]+\}\}/g, (m) => `<span class="var">${m}</span>`)}</span>
           <span class="r3"><span class="badge b-gold">${esc(L(catBy(q.cat)))}</span><span class="lang">${q.lang.toUpperCase()}</span></span></span></button>`).join("")}</div>
@@ -2544,8 +2683,7 @@ window.DATA = {
   SCR.campaigns = () => {
     const cs = DATA.campaigns, sent = cs.reduce((s, c) => s + c.sent, 0), read = cs.reduce((s, c) => s + c.read, 0), rep = cs.reduce((s, c) => s + c.reply, 0);
     return `<div class="scroller">
-      ${subHdr(T("campTitle"))}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("campSub")}</p>
+      ${subHdr(T("campTitle"), "", T("campSub"))}
       <div class="bento2">
         ${stat("campaign", "", cs.filter((c) => c.st === "active").length, T("campActive"), "", true)}
         ${stat("send", "c-b", fmt(sent), T("campSent"))}
@@ -2571,8 +2709,8 @@ window.DATA = {
     r.peak.forEach((row, d) => row.forEach((v, s) => { if (v > peak[0]) peak = [v, d, s]; }));
     const fullSlots = ar ? ["12 ص", "2 ص", "4 ص", "6 ص", "8 ص", "10 ص", "12 م", "2 م", "4 م", "6 م", "8 م", "10 م"] : ["12am", "2am", "4am", "6am", "8am", "10am", "12pm", "2pm", "4pm", "6pm", "8pm", "10pm"];
     return `<div class="scroller">
-      ${subHdr(T("repTitle"), `<button class="chip surf" style="height:36px" data-act="sheet" data-arg="range">${ic("clock").replace('class="i"', 'class="i" style="width:15px;height:15px"')}${T(S.range)}${ic("chevD").replace('class="i"', 'class="i" style="width:14px;height:14px"')}</button>`)}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("repSub")}</p>
+      ${subHdr(T("repTitle"), "", T("repSubShort"))}
+      <div class="rep-range"><button class="chip surf" style="height:36px" data-act="sheet" data-arg="range">${ic("calendar").replace('class="i"', 'class="i" style="width:15px;height:15px"')}${T(S.range)}${ic("chevD").replace('class="i"', 'class="i" style="width:14px;height:14px"')}</button></div>
       <div class="bento2">
         ${stat("chat", "", "2,850", T("repTotalConv"), trend(14), true)}
         ${stat("sparkle", "c-ai", "86%", T("repResolve"), trend(4))}
@@ -2608,8 +2746,7 @@ window.DATA = {
     const days = ["daySat", "daySun", "dayMon", "dayTue", "dayWed", "dayThu", "dayFri"];
     const prompt = "أنت «هَنا» — المساعدة الذكية لمتجر «سبا» المتخصص في العسل اليمني الأصلي والزيوت الطبيعية والبهارات. ردّك يجب أن يكون قصيراً، ودوداً، واثقاً، وباللهجة الخليجية/العُمانية البسيطة.\n\n🍯 العسل\n• عسل السدر الملكي اليمني — 250 ر.ق / كيلو\n• عسل السدر اليومي — 170 ر.ق / كيلو\n• عسل السمر — 130 ر.ق / كيلو\n• عسل المراعي الجبلية — 95 ر.ق / كيلو\n\n📌 قواعد الرد\n1. اذكر السعر والوزن بوضوح في أول رد.\n2. لا تخترع منتجات أو أسعار غير موجودة.\n3. للشكاوى → حوّل فوراً لموظف بشري.";
     return `<div class="scroller">
-      ${subHdr(T("aiTitle"))}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("aiSub")}</p>
+      ${subHdr(T("aiTitle"), "", T("aiSub"))}
       <div class="card surf">${cardT("key", T("aiOpenAI"), `<span class="badge b-green dot">${T("connected")}</span>`)}<p class="card-d">${T("aiOpenAIDesc")}</p>
         <div class="fld"><label for="aiKey">${T("apiKey")}</label><input id="aiKey" class="inp" type="password" value="sk-••••••••••••••••••••" dir="ltr"></div>
         <div class="grid2"><div class="fld"><label for="aiModel">${T("aiModel")}</label><select id="aiModel" class="sel"><option>gpt-4o-mini</option><option>gpt-4o</option><option>gpt-4.1</option><option>o4-mini</option></select></div>
@@ -2647,8 +2784,7 @@ window.DATA = {
   };
 
   SCR.team = () => `<div class="scroller">
-      ${subHdr(T("teamTitle"))}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("teamSub")}</p>
+      ${subHdr(T("teamTitle"), "", T("teamSub"))}
       <div class="clist">${DATA.team.map((m) => `<button class="row surf conv-card" data-act="sheet" data-arg="memberActs:${m.id}">
         <span class="av" style="background:${m.av}">${esc(initials(m.name))}</span>
         <span class="rb"><span class="name-line"><span class="rn">${esc(m.name)}</span>${mStatus(m)}</span>
@@ -2665,7 +2801,7 @@ window.DATA = {
             <span class="r2"><span class="rs">${T("thUsage")}: ${DATA.conversations.filter((c) => c.convTag === t.id).length}</span></span></span>
           <span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`;
   const rcList = () => `<div class="clist">${DATA.replyCats.map((c) => `<button class="row surf conv-card" data-act="sheet" data-arg="catActs:${c.id}">
-        <span class="mi c-o">${ic("reply")}</span>
+        <span class="mi c-o">${ic("bolt")}</span>
         <span class="rb"><span class="rn">${esc(L(c))}</span><span class="rs" style="margin-top:2px">${DATA.quickReplies.filter((q) => q.cat === c.id).length} ${T("catCount")}</span></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div>`;
   const CAT_TABS = [["seg", "catTabSeg", "contactTagsSub", segList, ["segForm", "segNew"]], ["tags", "catTabTags", "tagsSub", tagList, ["tagForm", "addConvTag"]], ["rc", "catTabRc", "replyCatSub", rcList, ["catForm", "catNew"]]];
   const accPanels = () => {
@@ -2678,15 +2814,17 @@ window.DATA = {
       security: `<div class="card surf">${cardT("lock", T("secChangePass"))}<div class="fld"><label for="pCur">${T("curPass")}</label>${pass("pCur", "********", "••••••••")}</div><div class="fld"><label for="pNew">${T("newPass")}</label>${pass("pNew", "", "••••••••", true)}</div><div class="fld"><label for="pCon">${T("confirmPass")}</label>${pass("pCon", "", "••••••••", true)}<span class="fp-err" id="pErr" hidden></span></div><button class="btn btn-p btn-blk" data-act="updPass">${ic("check")}${T("updatePass")}</button></div>`,
       lang: `<div class="card surf"><div class="lbl" style="margin-bottom:8px">${T("langInterface")}</div><div class="seg surf"><button class="${LANG === "ar" ? "on" : ""}" data-act="setLang" data-arg="ar">العربية</button><button class="${LANG === "en" ? "on" : ""}" data-act="setLang" data-arg="en">English</button></div>
         <div class="fld" style="margin-top:14px"><label for="pReg">${T("region")}</label><select id="pReg" class="sel"><option>(GMT+4) مسقط</option><option>(GMT+3) الدوحة</option><option>(GMT+5:30) الهند</option></select></div><div class="fld" style="margin:0"><label for="pDf">${T("dateFormat")}</label><select id="pDf" class="sel"><option>DD/MM/YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select></div></div>`,
-      cats: `<div class="cat-tabs" role="tablist">${CAT_TABS.map(([id, k]) => `<button role="tab" class="${S.catTab === id ? "on" : ""}" aria-selected="${S.catTab === id}" data-act="catTab" data-arg="${id}">${T(k)}</button>`).join("")}</div>
+      cats: `<div class="chips qr-cats cat-chips2" role="tablist">${CAT_TABS.map(([id, k, , list]) => `<button role="tab" class="chip ${S.catTab === id ? "on" : "surf"}" aria-selected="${S.catTab === id}" data-act="catTab" data-arg="${id}">${T(k)}<span class="cnt">${{ seg: DATA.tags, tags: DATA.convTags, rc: DATA.replyCats }[id].length}</span></button>`).join("")}</div>
         ${(() => { const t = CAT_TABS.find((x) => x[0] === S.catTab); return `<p style="margin:2px 4px 14px;font-size:13px;color:var(--ink-2)">${T(t[2])}</p>${t[3]()}`; })()}`,
-      tags: `<p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("tagsSub")}</p>
+      tags: `
         ${tagList()}`,
-      notifs: `<div class="card surf">${cardT("bell", T("ntAlerts"))}<p class="card-d">${T("ntAlertsSub")}</p>
+      notifs: `<div class="card surf nt-master"><div class="tgl"><span><strong>${T("ntMasterT")}</strong><small>${T("ntMasterD")}</small></span>${sw(S.ntOn, 'id="ntMaster"')}</div></div>
+        <div class="sec-h nt-sec"><h3>${T("ntSettings")}</h3></div>
+        <div class="nt-rest${S.ntOn ? "" : " is-off"}"><div class="card surf">${cardT("bell", T("ntAlerts"))}<p class="card-d">${T("ntAlertsSub")}</p>
           ${tgl(T("ntNewMsg2"), true)}${tgl(T("notifNewConv"), true)}${tgl(T("ntNewContact"), true)}${tgl(T("notifTransfer"), true)}${tgl(T("ntCampaigns"), true)}${tgl(T("ntReplies"), false)}</div>
         <div class="card surf">${cardT("bell", T("ntHow"))}${tgl(T("notifSound"), true)}${tgl(T("ntVibrate"), true)}</div>
         <div class="card surf">${cardT("moon", T("ntDnd"))}<p class="card-d">${T("ntDndSub")}</p>${tgl(T("ntDndOn"), false, 'id="dndSw"')}
-          <div class="hd-t" id="dndTimes" style="opacity:.45;pointer-events:none"><label>${T("from")} <input class="inp" type="time" value="22:00" aria-label="${T("ntDnd")} ${T("from")}"></label><label>${T("to")} <input class="inp" type="time" value="08:00" aria-label="${T("ntDnd")} ${T("to")}"></label></div></div>`,
+          <div class="hd-t" id="dndTimes" style="opacity:.45;pointer-events:none"><label>${T("from")} <input class="inp" type="time" value="22:00" aria-label="${T("ntDnd")} ${T("from")}"></label><label>${T("to")} <input class="inp" type="time" value="08:00" aria-label="${T("ntDnd")} ${T("to")}"></label></div></div></div>`,
     };
   };
   const SETTINGS = [["appearance", "tabAppearance", "palette", "c-o"], ["notifs", "ntTitle", "bell", "c-ai"], ["security", "tabSecurity", "shield", "c-b"], ["lang", "tabLang", "globe", "c-g"], ["cats", "catsMgmt", "tag", "c-m"]];
@@ -2698,12 +2836,11 @@ window.DATA = {
       <div class="list surf">${SETTINGS.map(([id, k, icn, cls]) => `<button class="row" data-act="go" data-arg="set-${id}"><span class="mi ${cls}">${ic(icn)}</span><span class="rb"><span class="rn">${T(k)}</span></span><span class="hint">${esc(hint[id])}</span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div></div>`;
   };
   // conversation tags keep their page, now reached from "إدارة التصنيفات"
-  SCR["set-tags"] = () => `<div class="scroller">${subHdr(T("tabTags"))}${accPanels().tags}</div>`;
-  SCR["reply-cats"] = () => `<div class="scroller">${subHdr(T("replyCatTitle"))}
-      <p style="margin:-6px 4px 14px;font-size:13px;color:var(--ink-2)">${T("replyCatSub")}</p>
+  SCR["set-tags"] = () => `<div class="scroller">${subHdr(T("tabTags"), "", T("tagsSub"))}${accPanels().tags}</div>`;
+  SCR["reply-cats"] = () => `<div class="scroller">${subHdr(T("replyCatTitle"), "", T("replyCatSub"))}
       ${rcList()}
     </div>`;
-  SETTINGS.forEach(([id, k]) => { SCR["set-" + id] = () => `<div class="scroller">${subHdr(T(id === "notifs" ? "ntSettings" : k))}${accPanels()[id]}</div>`; });
+  SETTINGS.forEach(([id, k]) => { SCR["set-" + id] = () => `<div class="scroller">${subHdr(T(k))}${accPanels()[id]}</div>`; });
 
   const APP_VERSION = "1.0.0"; // shown on the splash and in Help
   const FAQ = [["faq1q", "faq1a"], ["faq2q", "faq2a"], ["faq3q", "faq3a"], ["faq4q", "faq4a"], ["faq5q", "faq5a"]];
@@ -2726,7 +2863,7 @@ window.DATA = {
       ${hdr(T("tabMore"), "", bellBtn())}
       <button class="prof surf" data-act="go" data-arg="profile" aria-label="${T("tabProfile")}">${meAv("width:60px;height:60px;font-size:22px")}<span class="rb" style="flex:1;text-align:start"><strong>هشام العبدالله</strong><span dir="ltr" style="text-align:${LANG === "ar" ? "right" : "left"}">info@sabalandqa.com</span><span class="prof-link">${T("viewProfile")}</span></span><span class="chev">${ic("chevE")}</span></button>
       <div class="sec"><div class="sec-h"><h3>${T("grpMkt")}</h3></div><div class="list surf">
-        ${item("replies", "reply", "c-o", "navReplies")}
+        ${item("replies", "bolt", "c-o", "navReplies")}
         ${item("campaigns", "campaign", "c-m", "navCampaigns")}
         ${item("reports", "reports", "c-b", "navReports")}</div></div>
       <div class="sec"><div class="sec-h"><h3>${T("grpAcct")}</h3></div><div class="list surf">
@@ -2845,14 +2982,16 @@ window.DATA = {
     const c0 = getConv(S.chat), i = DATA.conversations.indexOf(c0);
     const c = S.custDraft ? Object.assign({}, c0, S.custDraft) : c0; // keeps unsaved picks across the "add segment" sheet
     S.custDraft = null;
-    return `<div class="sh-b" style="padding-top:16px"><div style="text-align:center">${av(convName(c), i, "lg")}<h3 style="margin-top:10px;font-size:18px">${esc(convName(c))}</h3><p class="hint" dir="ltr">${c.phone}</p>
-      <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px">${badge(tagById(c.tag))}${c.convTag ? badge(ctagById(c.convTag)) : ""}<span class="badge b-gray"><span class="ndot ${c.num}" style="width:6px;height:6px"></span>${numLabel(c.num)}</span></div></div>
-      <div class="grid2" style="margin-top:16px"><div class="fld"><label for="cuTag">${T("convTag")}</label><select id="cuTag" class="sel"><option value="">${T("noTag")}</option>${DATA.convTags.map((t) => `<option value="${t.id}" ${t.id === c.convTag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
-        <div class="fld"><label for="cuSeg" style="display:flex;justify-content:space-between;align-items:center">${T("cpClass")}<button type="button" class="badge b-gold" data-act="openSeg" style="height:24px">${ic("plus").replace('class="i"', 'class="i" style="width:12px;height:12px"')}${T("addClass")}</button></label><select id="cuSeg" class="sel">${DATA.tags.map((t) => `<option value="${t.id}" ${t.id === c.tag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div></div>
-      <div class="card surf" style="padding:4px 14px"><div class="kv"><span>${T("cpFirst")}</span><strong>${esc(L(c.first))}</strong></div><div class="kv"><span>${T("cpConvs")}</span><strong>${c.count}</strong></div><div class="kv"><span>${T("cpLastTopic")}</span><strong>${esc(L(c.topic))}</strong></div><div class="kv"><span>${T("cpLang")}</span><strong>${langLabel(c.lang)}</strong></div></div>
-      <div class="fld" style="margin-top:14px"><label for="cuNote">${T("cpNotes")}</label><textarea id="cuNote" class="ta" rows="2" placeholder="${T("cpNotePh")}">${esc(c.note || "")}</textarea></div>
-      <div class="lbl" style="margin-bottom:6px">${T("cpHistory")}${c.history && c.history.length ? ` (${c.history.length})` : ""}</div>
-      ${c.history && c.history.length ? c.history.map((h) => `<div class="act" style="padding:6px 0"><span class="ai ${h.by === "AI" ? "c-ai" : "c-b"}">${ic(h.by === "AI" ? "sparkle" : "user")}</span><div><p style="font-weight:600">${esc(L(h.topic))}</p><time>${esc(L(h.date))} · ${esc(h.by)}</time></div></div>`).join("") : `<p class="hint">${T("cpNoHistory")}</p>`}
+    return `<div class="cust-hero">${av(convName(c), i, "lg")}
+      <div class="ch-t"><h3>${esc(convName(c))}</h3><p dir="ltr">${c.phone}</p>
+        <div class="ch-b">${badge(tagById(c.tag))}${c.convTag ? badge(ctagById(c.convTag)) : ""}<span class="badge b-gray"><span class="ndot ${c.num}" style="width:6px;height:6px"></span>${numLabel(c.num)}</span></div></div>
+      <button class="ibtn sm surf" data-act="closeSheet" aria-label="close">${ic("x")}</button></div>
+    <div class="sh-b"><div class="fld"><label for="cuTag" class="lbl-row">${T("convTag")}<button type="button" class="lnk-add" data-act="openTag">${ic("plus")}${T("addConvTag")}</button></label><select id="cuTag" class="sel"><option value="">${T("noTag")}</option>${DATA.convTags.map((t) => `<option value="${t.id}" ${t.id === c.convTag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
+      <div class="fld"><label for="cuSeg" class="lbl-row">${T("cpClass")}<button type="button" class="lnk-add" data-act="openSeg">${ic("plus")}${T("addClass")}</button></label><select id="cuSeg" class="sel">${DATA.tags.map((t) => `<option value="${t.id}" ${t.id === c.tag ? "selected" : ""}>${esc(L(t))}</option>`).join("")}</select></div>
+      <div class="card surf cust-info"><div class="kv"><span>${T("cpFirst")}</span><strong>${esc(L(c.first))}</strong></div><div class="kv"><span>${T("cpConvs")}</span><strong>${c.count}</strong></div><div class="kv"><span>${T("cpLastTopic")}</span><strong>${esc(L(c.topic))}</strong></div><div class="kv"><span>${T("cpLang")}</span><strong>${langLabel(c.lang)}</strong></div></div>
+      <div class="fld"><label for="cuNote">${T("cpNotes")}</label><textarea id="cuNote" class="ta" rows="2" placeholder="${T("cpNotePh")}">${esc(c.note || "")}</textarea></div>
+      <div class="lbl cust-hist">${T("cpHistory")}${c.history && c.history.length ? ` (${c.history.length})` : ""}</div>
+      ${c.history && c.history.length ? `<div class="clist">${c.history.map((h) => `<div class="row surf conv-card hist-card"><span class="mi ${h.by === "AI" ? "c-ai" : "c-b"}">${ic(h.by === "AI" ? "sparkle" : "user")}</span><span class="rb"><span class="rn">${esc(L(h.topic))}</span><span class="rs" style="margin-top:2px">${esc(L(h.date))} · ${esc(h.by)}</span></span></div>`).join("")}</div>` : `<p class="hint">${T("cpNoHistory")}</p>`}
       </div><div class="sh-f"><button class="btn btn-g surf" data-act="sheet" data-arg="transfer">${ic("transfer")}${T("transfer")}</button><button class="btn btn-p" data-act="custSave">${T("save")}</button></div>`;
   };
   const swatches = (id, colors, cur) => `<div class="lbl" style="margin-bottom:8px">${T("colorLbl")}</div><div class="swatches" id="${id}">${colors.map((c) => `<button type="button" class="badge b-${c}${c === cur ? " on" : ""}" data-act="pickColor" data-arg="${c}" aria-label="${c}">●</button>`).join("")}</div>`;
@@ -2869,7 +3008,12 @@ window.DATA = {
     <div class="fld"><label for="rcAr">${T("nameAr")}</label><input id="rcAr" class="inp" value="${c ? esc(c.ar) : ""}"></div>
     <div class="fld"><label for="rcEn">${T("nameEn")}</label><input id="rcEn" class="inp" dir="ltr" value="${c ? esc(c.en) : ""}"></div></div>` + shFoot(`<button class="btn btn-p" data-act="saveCat" data-arg="${id || ""}">${c ? T("save") : T("add")}</button>`); };
   SH.catActs = (id) => actsSheet(L(catBy(id)), [["sheet", "catForm:" + id, "pen", "c-b", T("edit")], ["askDel", "rcat:" + id, "trash", "c-r", T("delete")]]);
-  SH.range = () => shHead(T("rngTitle")) + `<div class="sh-b" style="padding-bottom:22px">${["repPeriodCurrentMonth", "repPeriodPreviousMonth", "repPeriodCurrentYear", "repPeriodPreviousYear", "repPeriodCustom"].map((k) => opt("pickRange", k, k === "repPeriodCustom" ? "settings" : "clock", "c-o", T(k), "", S.range === k)).join("")}
+  // date span of each dashboard period, from today
+  const rangeSpan = (k) => { const d = new Date(), y = d.getFullYear(), m = d.getMonth();
+    const f = (x) => x.toLocaleDateString(LANG === "ar" ? "ar-u-nu-latn" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+    const s = { repPeriodCurrentMonth: [new Date(y, m, 1), d], repPeriodPreviousMonth: [new Date(y, m - 1, 1), new Date(y, m, 0)], repPeriodCurrentYear: [new Date(y, 0, 1), d], repPeriodPreviousYear: [new Date(y - 1, 0, 1), new Date(y - 1, 11, 31)] }[k];
+    return s ? `${f(s[0])} - ${f(s[1])}` : T("rngCustomHint"); };
+  SH.range = () => shHead(T("rngTitle")) + `<div class="sh-b" style="padding-bottom:22px"><div class="rng-list">${["repPeriodCurrentMonth", "repPeriodPreviousMonth", "repPeriodCurrentYear", "repPeriodPreviousYear", "repPeriodCustom"].map((k) => `<button class="rng-it surf${S.range === k ? " on" : ""}${k === "repPeriodCustom" ? " custom" : ""}" data-act="pickRange" data-arg="${k}"><span class="rb"><strong>${T(k)}</strong><span>${rangeSpan(k)}</span></span>${S.range === k ? `<span class="rng-ck">${ic("check")}</span>` : ""}</button>`).join("")}</div>
     ${S.range === "repPeriodCustom" ? `<div class="hd-t" style="margin-top:12px"><label>${T("from")} <input class="inp" type="date" value="2026-09-01" aria-label="${T("from")}"></label><label>${T("to")} <input class="inp" type="date" value="2026-10-05" aria-label="${T("to")}"></label></div><button class="btn btn-p btn-blk" style="margin-top:12px" data-act="closeSheet">${T("rngApply")}</button>` : ""}</div>`;
   SH.tagActs = (id) => { const t = DATA.convTags.find((x) => x.id === id); return actsSheet(L(t), [["sheet", "tagForm:" + id, "pen", "c-b", T("edit")], ["askDel", "ctag:" + id, "trash", "c-r", T("delete")]]); };
   SH.transfer = () => { const ag = DATA.agents.filter((a) => a.status === "active"), row = (a, i) => `<span class="av sm" style="background:${avColor(i + 1)}">${esc(initials(LANG === "ar" ? a.n : a.ne))}</span><span class="ob"><strong>${esc(LANG === "ar" ? a.n : a.ne)}</strong><span>${esc(L(a.role))}</span></span>`;
@@ -2879,9 +3023,15 @@ window.DATA = {
         <div class="dd-list" role="listbox">${ag.map((a, i) => `<button type="button" class="opt${i === 0 ? " on" : ""}" role="option" data-act="ddPick" data-arg="${a.id || i}" data-q="${esc((a.n + " " + a.ne).toLowerCase().replace(/s/g, ""))}">${row(a, i)}</button>`).join("")}
           <p class="hint dd-empty" hidden>${T("ddEmpty")}</p></div></div></div></div>
     <div class="fld"><label for="trNote">${T("note")}</label><textarea id="trNote" class="ta" rows="2"></textarea></div></div>` + shFoot(`<button class="btn btn-o" data-act="transferDo">${ic("transfer")}${T("transfer")}</button>`); };
-  SH.qr = () => shHead(T("quickReplies"), T("insertReply")) + `<div class="sh-b" style="padding-bottom:22px">${DATA.quickReplies.map((q) => `<button class="qr surf" data-act="qrPick" data-arg="${q.id}"><span class="qh"><strong>${esc(L(q.title))}</strong><span class="badge b-gray">${esc(L(catBy(q.cat)))}</span></span><p>${esc(L(q.body))}</p></button>`).join("")}</div>`;
+  SH.qr = () => shHead(T("quickReplies"), T("insertReply")) + `<div class="qr-top">
+      <div class="search">${ic("search")}<input id="qrQ" class="surf" type="search" placeholder="${T("search")}" aria-label="${T("search")}" autocomplete="off"></div>
+      <div class="chips qr-cats">${[{ id: "all" }].concat(DATA.replyCats).map((c) => `<button type="button" class="chip ${c.id === "all" ? "on" : "surf"}" data-act="qrSheetCat" data-arg="${c.id}">${c.id === "all" ? T("fltAll") : esc(L(c))}</button>`).join("")}</div></div>
+    <div class="sh-b" style="padding-bottom:22px">${DATA.quickReplies.map((q) => `<button class="qr surf" data-act="qrPick" data-arg="${q.id}" data-cat="${q.cat}" data-q="${esc((L(q.title) + " " + L(q.body)).toLowerCase())}"><span class="qh"><strong>${esc(L(q.title))}</strong><span class="badge b-gray">${esc(L(catBy(q.cat)))}</span></span><p>${esc(L(q.body))}</p></button>`).join("")}<p class="hint dd-empty" id="qrEmpty" hidden>${T("ddEmpty")}</p></div>`;
   SH.emoji = () => shHead(T("emojis")) + `<div class="sh-b" style="padding-bottom:22px"><div class="emo">${["🐝", "🍯", "🌿", "✅", "🙏", "🌟", "📦", "🚚", "❤️", "😊", "👌", "🎁", "💛", "🌹", "🌷", "🍃", "☀️", "🌙", "👍", "😍", "🤲"].map((e) => `<button data-act="emoji" data-arg="${e}">${e}</button>`).join("")}</div></div>`;
   SH.call = () => { const c = getConv(S.chat), i = DATA.conversations.indexOf(c); return shHead(T("callTitle") + convName(c), T("callDesc")) + `<div class="sh-b" style="text-align:center"><div class="call-av" style="background:${avColor(i)}">${esc(initials(convName(c)))}</div><h3 style="margin-top:16px">${esc(convName(c))}</h3><p class="hint" dir="ltr" style="font-size:14px">${c.phone}</p><p class="hint" style="display:flex;gap:6px;justify-content:center;align-items:center;margin-top:4px"><span class="ndot ${c.num}"></span>${numLabel(c.num)}</p></div>` + shFoot(`<button class="btn btn-o" data-act="callDo" style="background:linear-gradient(135deg,#2BB35A,#1C8A43);box-shadow:0 12px 26px -10px rgba(35,148,74,.6)">${ic("phone")}${T("callNow")}</button>`); };
+  SH.chatOpts = () => { const c = getConv(S.chat), it = [["sheet", "cust", "info", "c-m", T("cpInfo")], ["sheet", "call", "phone", "c-g", T("callBtn")], ["sheet", "transfer", "transfer", "c-b", T("transfer")], ["sheet", "cust", "tag", "c-o", c.convTag ? `${T("convTag")}: ${esc(L(ctagById(c.convTag)))}` : T("convTag")]];
+    if (!c.closed) it.push(["sheet", "closeChat", "check2", "c-g", T("closeChat")]);
+    return actsSheet(convName(c), it); };
   SH.closeChat = () => shHead(T("closeChatTitle"), T("closeChatMsg")) + shFoot(`<button class="btn btn-p" data-act="closeChatDo">${ic("check2")}${T("closeChat")}</button>`);
   // dashboard rules: own text messages can be edited for 15 minutes and deleted for 48 hours (dashboard copy only)
   const canEdit = (m) => !m.file && !m.voice && !m.img && m.at && Date.now() - m.at < 15 * 60e3;
@@ -2892,7 +3042,7 @@ window.DATA = {
   SH.msgDel = (i) => shHead(T("msgDeleteTitle"), T("msgDeleteMsg")) + shFoot(`<button class="btn btn-d" data-act="msgDelDo" data-arg="${i}">${ic("trash")}${T("delete")}</button>`);
   SH.sendCamp = (id) => shHead(T("cmpSend"), T("cmpChunkConfirm")) + shFoot(`<button class="btn btn-o" data-act="sendCampDo" data-arg="${id}">${ic("send")}${T("cmpSend")}</button>`);
   SH.confirm = () => shHead(T("confirmTitle"), T("confirmMsg")) + shFoot(`<button class="btn btn-d" data-act="confirmYes">${ic("trash")}${T("delete")}</button>`);
-  const actsSheet = (title, items, top) => shHead(title) + `<div class="sh-b" style="padding-bottom:22px">${top || ""}${items.map(([act, arg, icn, cls, label]) => opt(act, arg, icn, cls, label)).join("")}</div>`;
+  const actsSheet = (title, items, top) => shHead(title) + `<div class="sh-b" style="padding-bottom:22px">${top || ""}<div class="acts">${items.map(([act, arg, icn, cls, label]) => `<button class="opt act-it surf${act === "askDel" ? " danger" : ""}" data-act="${act}" data-arg="${arg}"><span class="mi ${cls}">${ic(icn)}</span><span class="ob"><strong>${label}</strong></span><span class="chev">${ic("chevE")}</span></button>`).join("")}</div></div>`;
   SH.contactActs = (id) => { const k = DATA.contacts.find((x) => x.id === id); return actsSheet(cName(k), [["chatWith", id, "chat", "c-g", T("openChat")], ["sheet", "contactForm:" + id, "pen", "c-b", T("edit")], ["askDel", "contact:" + id, "trash", "c-r", T("delete")]], `<div class="c-info surf">
       <div class="kv"><span>${T("cPhone")}</span><strong dir="ltr">${k.ph}</strong></div>
       <div class="kv"><span>${T("thTag")}</span>${badge(tagById(k.tag))}</div>
@@ -2921,10 +3071,13 @@ window.DATA = {
     <div class="fld"><label for="frB">${T("rBody")}</label><textarea id="frB" class="ta" rows="4" placeholder="${T("rBodyPh")}">${q ? esc(L(q.body)) : ""}</textarea><span class="hint">${T("rVarHint")}</span></div></div>` + shFoot(`<button class="btn btn-p" data-act="saveReply" data-arg="${id || ""}">${q ? T("save") : T("add")}</button>`); };
   SH.campForm = (id) => { const cp = id && DATA.campaigns.find((x) => x.id === id); return shHead(cp ? T("edit") : T("addCamp")) + `<div class="sh-b">
     <div class="fld"><label for="fmN">${T("cmpName")}</label><input id="fmN" class="inp" value="${cp ? esc(L(cp.n)) : ""}" placeholder="${T("cmpNamePh")}"></div>
-    <div class="grid2"><div class="fld"><label for="fmA">${T("cmpAudience")}</label><select id="fmA" class="sel">${Object.keys(AUD).map((k) => `<option value="${k}" ${cp && cp.aud === k ? "selected" : ""}>${T(AUD[k])}</option>`).join("")}</select></div>
-    <div class="fld"><label for="fmNum">${T("cmpNumber")}</label><select id="fmNum" class="sel"><option value="main">${numLabel("main")}</option><option value="second" ${cp && cp.num === "second" ? "selected" : ""}>${numLabel("second")}</option></select></div></div>
+    <div class="fld"><label for="fmA">${T("cmpAudience")}</label><select id="fmA" class="sel">${Object.keys(AUD).map((k) => `<option value="${k}" ${cp && cp.aud === k ? "selected" : ""}>${T(AUD[k])}</option>`).join("")}</select></div>
+    <div class="fld"><label for="fmNum">${T("cmpNumber")}</label><select id="fmNum" class="sel"><option value="main">${numLabel("main")}</option><option value="second" ${cp && cp.num === "second" ? "selected" : ""}>${numLabel("second")}</option></select></div>
     <div class="fld"><label for="fmM">${T("cmpMsg")}</label><textarea id="fmM" class="ta" rows="4" placeholder="${T("cmpMsgPh")}"></textarea></div>
-    <div class="fld"><label for="fmFile">${T("cmpAttachBtn")}</label><input type="file" id="fmFile" class="file-in" accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.mp4,.mp3,.ogg">
+    <div class="fld"><label for="fmFile">${T("cmpAttachBtn")}</label>
+      <div class="filebox"><input type="file" id="fmFile" class="file-hidden" accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.mp4,.mp3,.ogg">
+        <label class="fb-drop" for="fmFile"><span class="fb-ic">${ic("upload")}</span><span class="fb-t"><strong>${T("fbPick")}</strong><small>${T("fbTypes")}</small></span></label>
+        <div class="fb-file" hidden><span class="fb-ic">${ic("file")}</span><span class="fb-t"><strong class="fb-n"></strong><small class="fb-s"></small></span><button type="button" class="ibtn sm" data-act="fbClear" aria-label="${T("fbRemove")}">${ic("x")}</button></div></div>
       <span class="hint">${T("cmpAttachHint")}</span></div>
     <div class="off-note">${ic("info")}<span>${T("cmpChunkNotice")}</span></div></div>` + shFoot(`<button class="btn btn-o" data-act="saveCamp" data-arg="${id || ""}">${cp ? T("save") : `${ic("send")}${T("cmpCreate")}`}</button>`); };
   SH.memberForm = (id) => { const m = id && DATA.team.find((x) => x.id === id); return shHead(m ? T("editMember") : T("addMember")) + `<div class="sh-b">
@@ -2933,10 +3086,12 @@ window.DATA = {
     <div class="fld"><label for="fuP">${T("mPhone")}</label>${telIn("fuP", m ? m.phone : "+968 ")}</div>
     <div class="fld"><label for="fuW">${T("mPassword")}</label>${pass("fuW", "", m ? T("mPasswordPh") : "••••••••")}</div>
     <div class="fld"><label for="fuW2">${T("mPasswordConfirm")}</label>${pass("fuW2", "", "••••••••")}</div></div>` + shFoot(`${m ? "" : `<button class="btn btn-g surf" data-act="saveMember" data-arg="|perms">${ic("shield")}${T("mPerms")}</button>`}<button class="btn btn-p" data-act="saveMember" data-arg="${id || ""}">${m ? T("save") : T("add")}</button>`); };
-  const PIC = { overview: "home", conversations: "chat", contacts: "users", replies: "reply", campaigns: "campaign", reports: "reports", "ai-settings": "ai", team: "users", account: "settings", conversasion_tags: "tag" };
-  SH.perms = (id) => { const m = DATA.team.find((x) => x.id === id); return shHead(T("permsTitle") + " — " + m.name, T("permsSub")) + `<div class="sh-b">
+  const PIC = { overview: "home", conversations: "chat", contacts: "users", replies: "bolt", campaigns: "campaign", reports: "reports", "ai-settings": "ai", team: "users", account: "settings", conversasion_tags: "tag" };
+  SH.perms = (id) => { const m = DATA.team.find((x) => x.id === id); return `<div class="sh-h perm-h"><button class="ibtn sm surf" data-act="sheet" data-arg="memberActs:${id}" aria-label="back">${ic("back")}</button><div class="sh-t"><h3>${T("permsTitle")}</h3></div><button class="ibtn sm surf" data-act="closeSheet" aria-label="close">${ic("x")}</button></div><div class="sh-b">
+    <div class="perm-who surf"><span class="av" style="background:${m.av}">${esc(initials(m.name))}</span><span class="rb"><strong>${esc(m.name)}</strong><span dir="ltr">${esc(m.email)}</span></span>${m.owner ? `<span class="badge b-gold">${T("ownerRole")}</span>` : `<span class="badge b-gray">${m.perms.length}/9</span>`}</div>
+    <p class="hint perm-sub">${T("permsSub")}</p>
     <div style="display:flex;gap:8px;margin-bottom:10px"><button class="btn btn-g surf btn-sm" data-act="permsAll" data-arg="1">${T("selectAllPerms")}</button><button class="btn btn-g surf btn-sm" data-act="permsAll" data-arg="0">${T("clearAllPerms")}</button></div>
-    <div id="permsList">${DATA.PERMS.map((p) => `<label class="perm"><input type="checkbox" data-perm="${p.id}" ${m.perms.includes(p.id) ? "checked" : ""} ${m.owner ? "disabled" : ""}><span class="pi">${ic(PIC[p.id])}</span><span class="pn">${esc(L(p))}</span><span class="pc">${ic("check")}</span></label>`).join("")}</div>
+    <div id="permsList" class="perm-grid">${DATA.PERMS.map((p) => `<label class="perm"><input type="checkbox" data-perm="${p.id}" ${m.perms.includes(p.id) ? "checked" : ""} ${m.owner ? "disabled" : ""}><span class="pi">${ic(PIC[p.id])}</span><span class="pn">${esc(L(p))}</span><span class="pc">${ic("check")}</span></label>`).join("")}</div>
     ${m.owner ? `<p class="hint" style="margin-top:10px">${LANG === "ar" ? "المدير العام لديه صلاحيات كاملة دائماً." : "The owner always has full access."}</p>` : ""}</div>` + shFoot(`<button class="btn btn-p" data-act="permsSave" data-arg="${id}" ${m.owner ? "disabled" : ""}>${ic("check")}${T("save")}</button>`); };
   SH.meta = (id) => { const isNew = id === "new"; const n = isNew ? { meta: { phoneId: "", wabaId: "", accessToken: "", callbackUrl: "https://api.sabalandqa.com/webhook/v1/whatsapp/new", verifyToken: "saba_x7k2m9p4", version: "v23.0" }, phone: "+968 " } : DATA.numbers[id];
     return shHead(isNew ? T("connectNumber") : T("manageNum") + " — " + numLabel(id), T("aiMetaDesc")) + `<div class="sh-b">
@@ -3054,6 +3209,8 @@ window.DATA = {
     // tab bar + floating button slide away while scrolling down and come back on any scroll up
     const sc = $("#view .scroller"), app = $("#app");
     if (sc) { let last = sc.scrollTop; sc.addEventListener("scroll", () => { const y = sc.scrollTop, d = y - last; if (Math.abs(d) < 8) return; app.classList.toggle("hide-chrome", d > 0 && y > 60); last = y; }, { passive: true }); }
+    const nm = $("#ntMaster"); if (nm) { const apply = () => { const rest = $(".nt-rest"); rest.classList.toggle("is-off", !S.ntOn); rest.querySelectorAll("input").forEach((i) => { i.disabled = !S.ntOn; }); };
+      apply(); nm.addEventListener("change", (e) => { S.ntOn = e.target.checked; apply(); toast("toastSaved"); }); }
     const dnd = $("#dndSw"); if (dnd) dnd.addEventListener("change", (e) => { const t = $("#dndTimes"); t.style.opacity = e.target.checked ? "1" : ".45"; t.style.pointerEvents = e.target.checked ? "" : "none"; });
     bindForgot();
     const ph = $("#photoIn"); if (ph) ph.addEventListener("change", (e) => {
@@ -3099,7 +3256,7 @@ window.DATA = {
     contact: { fcN: { req: 1, max: 255 }, fcP: { req: 1, unique: "contact" }, fcT: { req: 1 }, fcL: { req: 1 }, fcNum: {} },
     reply: { frT: { req: 1, max: 255 }, frC: { req: 1 }, frL: { req: 1 }, frB: { req: 1, max: 5000 } },
     camp: { fmN: { req: 1, max: 255 }, fmA: { req: 1 }, fmNum: { req: 1 }, fmM: { max: 5000, reqWithout: "fmFile" }, fmFile: { file: 1 } },
-    member: { fuN: { req: 1, max: 255 }, fuE: { req: 1, type: "email", max: 255, unique: "member" }, fuP: { req: 1, unique: "memberPhone" }, fuW: { reqNew: 1, min: 8 }, fuW2: { confirmOf: "fuW" } },
+    member: { fuN: { req: 1, max: 255 }, fuE: { req: 1, type: "email", max: 255, unique: "member" }, fuP: { req: 1, unique: "memberPhone" }, fuW: { reqNew: 1, min: 8 }, fuW2: { reqNew: 1, confirmOf: "fuW" } },
     meta: { mtLb: { max: 40 }, mtPh: { req: 1 }, mtPid: { req: 1, max: 100 }, mtW: { req: 1 }, mtT: { reqNew: 1 }, mtV: { req: 1 }, mtVer: { req: 1 } },
     tag: { ftN: { req: 1, max: 255 } },
     seg: { sgAr: { req: 1, max: 255 }, sgEn: { req: 1, max: 255 } },
@@ -3151,7 +3308,7 @@ window.DATA = {
   }
   function setErr(id, msg) {
     const el = $("#" + id); if (!el) return;
-    const wrap = el.closest(".tel") || el.closest(".inrow") || el.closest(".ifield") || el, err = $("#" + id + "-err");
+    const wrap = el.closest(".tel") || el.closest(".inrow") || el.closest(".ifield") || el.closest(".filebox") || el, err = $("#" + id + "-err");
     wrap.classList.toggle("invalid", !!msg); el.setAttribute("aria-invalid", msg ? "true" : "false");
     if (err) { err.innerHTML = msg ? `${ic("info")}<span>${esc(msg)}</span>` : ""; err.hidden = !msg; }
   }
@@ -3190,13 +3347,11 @@ window.DATA = {
         if (txt) txt.after(document.createRange().createContextualFragment(mark)); else label.insertAdjacentHTML("beforeend", mark);
       }
       if (req) el.setAttribute("aria-required", "true");
-      const wrap = el.closest(".tel") || el.closest(".inrow") || el.closest(".ifield") || el;
+      const wrap = el.closest(".tel") || el.closest(".inrow") || el.closest(".ifield") || el.closest(".filebox") || el;
       const counter = rule.max >= 1000 ? `<span class="cnt num" data-cnt="${id}">${el.value.length}/${rule.max}</span>` : "";
       wrap.insertAdjacentHTML("afterend", `<div class="fmeta"><span class="ferr" id="${id}-err" role="alert" hidden></span>${counter}</div>`);
       el.setAttribute("aria-describedby", id + "-err");
     });
-    const body = root.querySelector(".sh-b");
-    if (body && !body.querySelector(".req-note") && body.querySelector('[aria-required="true"]')) body.insertAdjacentHTML("afterbegin", `<p class="req-note"><span class="req">*</span> ${T("reqNote")}</p>`);
   }
   // after a first attempt, errors update as the person types
   const revalidate = (e) => {
@@ -3228,11 +3383,22 @@ window.DATA = {
       setTimeout(() => { if (p.classList.contains("in")) return; p.hidden = true; p.classList.remove("pk-page"); if (dd.isConnected) dd.appendChild(p); }, 300);
     }
   }
+  function filterQR() {
+    const s = ($("#qrQ") || {}).value ? $("#qrQ").value.trim().toLowerCase() : "", cat = ($(".qr-top .chip.on") || { dataset: { arg: "all" } }).dataset.arg;
+    let n = 0; document.querySelectorAll("#sheetHost .qr[data-cat]").forEach((b) => { const hit = (cat === "all" || b.dataset.cat === cat) && (!s || b.dataset.q.includes(s)); b.hidden = !hit; if (hit) n++; });
+    const e = $("#qrEmpty"); if (e) e.hidden = !!n;
+  }
+  function fileBoxSync(inp) {
+    const box = inp.closest(".filebox"); if (!box) return; const f = inp.files && inp.files[0];
+    box.querySelector(".fb-drop").hidden = !!f; box.querySelector(".fb-file").hidden = !f;
+    if (f) { box.querySelector(".fb-n").textContent = f.name; box.querySelector(".fb-s").textContent = f.size >= 1048576 ? (f.size / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(f.size / 1024)) + " KB"; }
+  }
+  document.addEventListener("change", (e) => { if (e.target.classList && e.target.classList.contains("file-hidden")) fileBoxSync(e.target); });
   function filterDD(panel, s) {
     let n = 0; panel.querySelectorAll(".opt[data-q]").forEach((o) => { const hit = !s || o.dataset.q.includes(s); o.hidden = !hit; if (hit) n++; });
     panel.querySelector(".dd-empty").hidden = !!n;
   }
-  document.addEventListener("input", (e) => { if (e.target.id === "ddQ") filterDD(e.target.closest(".dd-panel"), e.target.value.trim().toLowerCase().replace(/s/g, "")); });
+  document.addEventListener("input", (e) => { if (e.target.id === "qrQ") filterQR(); if (e.target.id === "ddQ") filterDD(e.target.closest(".dd-panel"), e.target.value.trim().toLowerCase().replace(/s/g, "")); });
   function toast(key, kind) {
     const t = $("#toast");
     t.classList.toggle("err", kind === "err");
@@ -3255,7 +3421,7 @@ window.DATA = {
 
   /* ---------- actions ---------- */
   const ACT = {
-    go: (a) => { S.prev = S.screen; S.segDraft = null; go(a); }, tab: (a) => go(a),
+    go: (a) => { S.prev = S.screen; S.segDraft = S.tagDraft = null; go(a); }, tab: (a) => go(a),
     openNotif: (id) => {
       const n = NOTIFS.find((x) => x.id === id); n.unread = false;
       if (n.go[0] === "chat") return ACT.openChat(n.go[1]);
@@ -3294,6 +3460,7 @@ window.DATA = {
       c.convTag = $("#cuTag").value || null; c.tag = $("#cuSeg").value; c.note = $("#cuNote").value;
       closeSheet(true); render(); toast("toastSaved");
     },
+    openTag: () => { S.tagDraft = { tag: $("#cuSeg").value, note: $("#cuNote").value }; openSheet("tagForm"); },
     openSeg: () => { S.segDraft = { convTag: $("#cuTag").value || null, note: $("#cuNote").value }; openSheet("segForm"); },
     // segment form serves the segments page and the customer sheet ("إضافة تصنيف"), which it returns to
     saveSeg: (id) => {
@@ -3318,6 +3485,9 @@ window.DATA = {
     msgDelDo: (i) => { const c = getConv(S.chat); c.msgs[+i].deleted = true; closeSheet(true); $("#msgs").innerHTML = msgsHtml(c); toast("toastDeleted"); },
     sendCampDo: (id) => { const cp = DATA.campaigns.find((x) => x.id === id); cp.st = "sending"; closeSheet(true); render(); toast("toastCampSending"); },
     catTab: (t) => { S.catTab = t; render(); },
+    fbClear: (a, el) => { const inp = el.closest(".filebox").querySelector("input[type=file]"); inp.value = ""; fileBoxSync(inp); inp.dispatchEvent(new Event("input", { bubbles: true })); },
+    qrSheetCat: (c, el) => { el.parentElement.querySelectorAll(".chip").forEach((b) => { b.classList.toggle("on", b === el); b.classList.toggle("surf", b !== el); }); filterQR(); },
+    qrCat: (c, el) => { S.qrCat = c; render(); const on = $(".qr-cats .chip.on"); if (on) on.scrollIntoView({ inline: "nearest", block: "nearest" }); },
     pickRange: (k) => { S.range = k; if (k === "repPeriodCustom") openSheet("range"); else { closeSheet(true); render(); } },
     // voice note: simulated recording (the dashboard records with MediaRecorder and uploads an .ogg)
     voice: () => {
@@ -3395,7 +3565,9 @@ window.DATA = {
     permsSave: (id) => { const m = DATA.team.find((x) => x.id === id); m.perms = Array.from(document.querySelectorAll("#permsList input:checked")).map((i) => i.dataset.perm); closeSheet(true); render(); toast("toastPermsSaved"); },
     metaSave: (k) => { if (!validate("meta")) return; closeSheet(); toast(k); },
     pickColor: (c, el) => { el.parentElement.querySelectorAll("button").forEach((b) => { b.style.outline = b === el ? "2px solid var(--ink)" : "none"; b.classList.toggle("on", b === el); }); },
-    saveTag: (id) => { if (!validate("tag", { editId: id })) return; const nm = $("#ftN").value.trim(); const col = ($("#ftC .on") || {}).dataset ? $("#ftC .on").dataset.arg : "gold"; const t = id && DATA.convTags.find((x) => x.id === id); if (t) Object.assign(t, { ar: nm, en: nm, color: col }); else DATA.convTags.push({ id: "ct" + Date.now(), ar: nm, en: nm, color: col }); closeSheet(true); render(); toast("toastSaved"); },
+    saveTag: (id) => { if (!validate("tag", { editId: id })) return; const nm = $("#ftN").value.trim(); const col = ($("#ftC .on") || {}).dataset ? $("#ftC .on").dataset.arg : "gold"; const t = id && DATA.convTags.find((x) => x.id === id); if (t) Object.assign(t, { ar: nm, en: nm, color: col }); else { id = "ct" + Date.now(); DATA.convTags.push({ id, ar: nm, en: nm, color: col }); }
+      if (S.tagDraft && S.screen === "chat") { S.custDraft = Object.assign({}, S.tagDraft, { convTag: id }); S.tagDraft = null; openSheet("cust"); toast("toastSaved"); return; }
+      closeSheet(true); render(); toast("toastSaved"); },
     askDel: (spec) => {
       const [kind, id] = spec.split(":");
       if (kind === "seg" && DATA.contacts.some((k) => k.tag === id)) { closeSheet(true); return toast("toastContactTagInUse", "err"); }
