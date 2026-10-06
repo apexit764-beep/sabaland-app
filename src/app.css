@@ -1117,3 +1117,5 @@ fieldset.locked { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }
 .sh-h .sh-t { min-width: 0; }
 .sh-h h3 { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .bub { overflow-wrap: anywhere; }
+/* show only the phone mockup — the side panel (title, theme/lang buttons, demo login) is hidden */
+.panel { display: none; }
